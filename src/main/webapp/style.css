@@ -1,9 +1,48 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  overflow: hidden;
+  background-color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  border-bottom: solid 1px #e1e1e1;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.navbar .search-container {
+  float: right;
+}
+
+.navbar input[type="text"] {
+  padding: 4px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: solid 1px black;
+  border-right: none;
+}
+
+.navbar .search-container button {
+  float: right;
+  padding: 4px 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: solid 1px black;
+  cursor: pointer;
+}
+
+.navbar .search-container button:hover {
+  background: #ccc;
 }
