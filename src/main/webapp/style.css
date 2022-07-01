@@ -1,7 +1,9 @@
-#content {
+.background {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+  font-family: courier;
+  padding-bottom: 300px;
+  background-color: #D8F1D5;
 }
 
 #greeting-container {
