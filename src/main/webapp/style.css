@@ -6,6 +6,10 @@
   background-color: #D8F1D5;
 }
 
-#greeting-container {
-  margin-top: 20px;
+.content {
+  width: 750px;
+}
+
+.navbar-custom {
+    background-color: #20604A;
 }
