@@ -1,0 +1,177 @@
+[
+    {
+        "name": "National Association for the Advancement of Colored People",
+        "address": "4805 Mt. Hope Drive, Baltimore MD 21215", 
+        "description": "An organization created to help the African-American minority in America.",
+        "hashtags": ["Black", "Equality", "African-American"],
+        "phone": "(410)-580-5777",
+        "url": "https://naacp.org"
+    },
+    {
+        "name": "Cesar Chavez Foundation",
+        "address": "29700 Woodford-Tehachapi Rd. Keene, CA 93531", 
+        "description": "An organization created to support the Latino minority and working class in America.",
+        "hashtags": ["Latinos", "Equality", "Sponsorship", "Working", "Middle-Class", "Poverty"],
+        "phone": "(661)-823-6271",
+        "url": "https://chavezfoundation.org"
+    },
+    {
+        "name": "United Negro College Fund",
+        "address": "1805 7th Street, NW Washington, DC  20001", 
+        "description": "An organization created to help African-Americans achieve scholarships and provide them with essential resources.",
+        "hashtags": ["Black", "Equality", "African-American", "School"],
+        "phone": "(800)-331-2244",
+        "url": "https://uncf.org"
+    },
+    {
+        "name": "National Constitutional Law Union",
+        "address": "N/A", 
+        "description": "This union helps provide financial support to Americans.",
+        "hashtags": ["Economy", "Welfare", "Economic", "Finance"],
+        "phone": "N/A",
+        "url": "https://www.nclu.com"
+    },
+    {
+        "name": "California Student Aid Commission",
+        "address": "11120 International Drive, STE. 100 Rancho Cordova, CA 95670", 
+        "description": "This is a commission put in place by the state of California to help students earn obtain financial aid and other financial opportunities.",
+        "hashtags": ["Finance", "Financial Aid", "Economic", "Finance", "California", "School"],
+        "phone": "(888)-224-7268",
+        "url": "https://www.csac.ca.gov"
+    },
+    {
+        "name": "Project HOPE",
+        "address": "91506", 
+        "email": "BVP@burbankca.gov",
+        "description": "Project HOPE is a free City of Burbank program that pairs residents (age 55+) with volunteers who assist with essential errands, including: grocery shopping, picking up prescriptions, and dropping off items at the post office.",
+        "hashtags": ["55+"],
+        "phone": "(818)-238-5370",
+        "url": "https://www.burbankca.gov/web/parks-recreation/resources"
+    },
+    {
+        "name": "Burbank Temporary Aid Center",
+        "address": "1304 W. Burbank Blvd. Burbank, CA 91506", 
+        "email": "info@theBTAC.org",
+        "description": "BTAC is dedicated to helping meet the short-term needs for food and basic services necessary to live with dignity. We strive to help create a community where the poor, working poor, and homeless are able to access the resources they need to become as self-sufficient as possible.",
+        "hashtags": ["food pantry", "homelessness", "shower", "laundry"],
+        "phone": "(818)-848-2822",
+        "url": "https://www.burbanktemporaryaidcenter.org/"
+    },
+    {
+        "name": "All-Inclusive Community Health Center",
+        "address": "1311 N San Fernando Blvd Burbank, CA 91504",
+        "email": "info@aichc.org", 
+        "description": "A non-profit Community Health Center whose mission is “To increase access to healthcare and other social services for underserved populations in the communities of Los Angeles County.” This includes but is not limited to Los Angeles, Glendale, North Hollywood, Pasadena, Tujunga, Van Nuys, Sunland and San Fernando communities of greater Los Angeles County. All-Inclusive Community Health Center’s (AICHC) quest is to promote increased access to health-care, social services and education, by creating linkages between community-based & faith-based organizations, businesses, educational & governmental institutions and health-care facilities.",
+        "hashtags": ["health", "healthcare", "social services", "education"],
+        "phone": "(818)-843-9900",
+        "url": "https://www.aichc.org/"
+    },
+    {
+        "name": "Kids Community Dental Clinic",
+        "address": "400 W. Elmwood Ave. Burbank, CA 91506", 
+        "email": "info@kidsclinic.org",
+        "description": "The Kids' Community Dental Clinic in Burbank, CA is dedicated to improving the oral health of children from low-income families with quality procedures, preventative treatments, and oral health education. Whether you are in need of low-cost dental services for a child age 0-18, or you would like to help our cause, please browse our site for more information.",
+        "hashtags": ["kids", "dental"],
+        "phone": "(818)-841-8010",
+        "url": "https://www.kidsclinic.org/"
+    },
+    {
+        "name": "NALEO",
+        "address": "90015", 
+        "email": "N/A",
+        "description": "NALEO Educational Fund provides national leadership on key issues that affect Latino participation in our political process, including immigration and naturalization, voting rights, election reform, the Census and the appointment of qualified Latinos to top executive and judicial positions.",
+        "hashtags": ["Voting", "Citizenship", "DACA"],
+        "phone": " (213)-747-7606",
+        "url": "https://naleo.org/"
+    },
+    {
+        "name": "Planned Parenthood",
+        "address": "916 W Burbank Blvd, #M, Burbank, CA 91506", 
+        "email": "N/A",
+        "description": "Planned Parenthood is one of the nation’s leading providers of high-quality, affordable health care, and the nation’s largest provider of sex education. With or without insurance, you can always come to us for your health care.",
+        "hashtags": ["health", "healthcare"],
+        "phone": "(800)-576-5544",
+        "url": "https://www.plannedparenthood.org/health-center/california/burbank/91506/burbank-health-center-2236-90070"
+    },
+    {
+        "name": "Burbank Adult School",
+        "address": "3811 W. Allan Avenue Burbank, California 91505", 
+        "email": "N/A",
+        "description": "As we navigate the challenges of our current times, Burbank Adult School continues to focus on offering high-quality instruction that will prepare students for their future. With pathways designed to transition students into college, vocational education, and directly into the workforce, Burbank Adult School commits itself to its students’ success and lifelong learning.",
+        "hashtags": "education",
+        "phone": "(818)-729-5950",
+        "url": "https://www.burbankusd.org/Page/45"
+    },
+    {
+        "name": "OCA-Asian Pacific American Advocates",
+        "address": "900 19th St. NW, 6th Floor Washington, D.C. 20006", 
+        "email": "oca@ocanational.org",
+        "description": "For almost 50 years, OCA-Asian Pacific Americans has been dedicated to advancing the social, political, and economic well-being of Asian Americans and Pacific Islanders (AAPIs).",
+        "hashtags": ["asian american", "asian", "pacific islander"],
+        "phone": "(202)-223-5500",
+        "url": "https://www.ocanational.org"
+    },
+    {
+        "name": "Asian American Resource Workshop",
+        "address": "42 Charles Street, Suite A, Dorchester, MA 02122", 
+        "email": "info@aarw.org",
+        "description": "An organization based in Massachusetts put together to help Asian-Americans by providing them with resources and financial help. ",
+        "hashtags": ["asian american", "asian", "massachusetts"],
+        "phone": "(617)-942-8178",
+        "url": "https://www.aarw.org"
+    },
+    {
+        "name": "YMCA",
+        "address": "YMCA of the USA 101 N Wacker Drive Chicago, IL 60606", 
+        "email": "N/A",
+        "description": "The YMCA is the leading nonprofit committed to strengthening individuals and communities across the country. At the Y, we’re here to help you find your “why” – your greater sense of purpose – by connecting you with opportunities to improve your health, support young people, make new friends and contribute to a stronger, more cohesive community for all.",
+        "hashtags": ["youth", "diverse", "global", "equality"],
+        "phone": "N/A",
+        "url": "https://www.ymca.org"
+    },
+    {
+        "name": "United Way Worldwide",
+        "address": "701 N. Fairfax Street Alexandria, VA 22314", 
+        "email": "N/A",
+        "description": "United Way advances the common good in communities across the world. Our focus is on education, income and health—the building blocks for a good quality of life.",
+        "hashtags": ["sponsorship", "finance", "health", "education", "charity"],
+        "phone": "(703)-836-7112",
+        "url": "https://www.unitedway.org/#"
+    },
+    {
+        "name": "The Salvation Army",
+        "address": "101 Queen Victoria St, London EC4V 4EH, United Kingdom", 
+        "email": "queenny.wu@uww.unitedway.org",
+        "description": "The Salvation Army is an organization committed to assessing and helping people who are struggling. Through charitable programs or by providing them withresources, is how they are able to help.",
+        "hashtags": ["charity", "christian", "global"],
+        "phone": "(800)-728-7825",
+        "url": "https://www.salvationarmyusa.org/usn/"
+    },
+    {
+        "name": "Feeding America",
+        "address": "161 North Clark Street, Suite 700 Chicago, IL 60601", 
+        "email": "info@feedingamerica.org",
+        "description": "Feeding America has programs to reach children, seniors, and families no matter where they live or spend time. At senior centers or schools, in the city or countryside, Feeding America programs get food to people where they are and when they need it most.",
+        "hashtags": ["charity", "food", "usa", "national", "diverse" ],
+        "phone": "(800)-771-2303",
+        "url": "https://www.feedingamerica.org"
+    },
+    {
+        "name": "Fulbright",
+        "address": "1900 L Street NW, Suite 302 Washington DC, 20036", 
+        "email": "FBstudent@iie.org",
+        "description": "The Fulbright U.S. Student Program expands perspectives through academic and professional advancement and cross-cultural dialogue. Fulbright creates connections in a complex and changing world. In partnership with more than 140 countries worldwide, the Fulbright U.S. Student Program offers unparalleled opportunities in all academic disciplines.",
+        "hashtags": ["finance", "scholarhip", "usa", "national", "school", "students"],
+        "phone": "(800)-272-6994",
+        "url": "https://us.fulbrightonline.org"
+    },
+    {
+        "name": "World Vision International",
+        "address": "34834 Weyerhaeuser Way South Federal Way, WA 98001", 
+        "email": "teamworldvision@worldvision.org",
+        "description": "We partner with children, families, and their communities to reach their full potential by tackling the causes of poverty and injustice.",
+        "hashtags": ["youth", "global", "sponsorship", "christian"],
+        "phone": "(888)-511-6548",
+        "url": "https://www.worldvision.org"
+    }
+]
