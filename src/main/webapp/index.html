@@ -67,8 +67,7 @@
                     </div>
                     <div class="col-md-6 position-relative">
                       <label for="validationTooltip02" class="form-label">Phone Number</label>
-                      <input type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="validationTooltip02" name="resource-phone" placeholder="optional">
-                      <small>Format: 123-456-7890</small>
+                      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="validationTooltip02" name="resource-phone" placeholder="310-233-1000">
                       <div class="valid-tooltip">
                         Good
                       </div>
@@ -78,14 +77,14 @@
                     </div>
                     <div class="col-md-6 position-relative">
                       <label for="validationTooltip03" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="validationTooltip03" name="resource-email" placeholder="optional">
+                      <input type="email" class="form-control" id="validationTooltip03" name="resource-email" placeholder="name@example.com">
                       <div class="valid-tooltip">
                         Good
                       </div>
                     </div>
                     <div class="col-md-9 position-relative">
                       <label for="validationTooltip04" class="form-label">URL to Website</label>
-                      <input type="url" class="form-control" id="validationTooltip04" name="resource-url" placeholder="required" required>
+                      <input type="url" class="form-control" id="validationTooltip04" name="resource-url" placeholder="https://www.site.com" required>
                       <div class="valid-tooltip">
                         Good
                       </div>
@@ -95,7 +94,7 @@
                     </div>
                     <div class="col-md-3 position-relative">
                       <label for="validationTooltip05" class="form-label">Zip</label>
-                      <input type="number" class="form-control" id="validationTooltip05" name="resource-zip" placeholder="required" required>
+                      <input type="number" pattern="[0-9]{5} | [0-9]{5}-[0-9]{4}" class="form-control" id="validationTooltip05" name="resource-zip" placeholder="90001-1234" required>
                       <div class="valid-tooltip">
                         Good
                       </div>
@@ -138,7 +137,7 @@
                     </div>
                     <div class="col-md-9 position-relative">
                       <label class="form-label"><strong>Description</strong></label>
-                      <textarea name="description-input" class="form-control" rows="5"></textarea>
+                      <textarea name="description-input" class="form-control" rows="5" ></textarea>
                     </div>
                     <div class="col-12 position text-center">
                         <button class="btn btn-dark" type="submit">Submit form</button>
