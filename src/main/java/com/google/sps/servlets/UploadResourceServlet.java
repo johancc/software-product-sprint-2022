@@ -21,67 +21,56 @@ public class UploadResourceServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
     // Sanitize user input to remove HTML tags and JavaScript.
-    // String resourceName = Jsoup.clean(request.getParameter("resource-name"),
-    // Whitelist.none()); String resourcePhone =
-    // Jsoup.clean(request.getParameter("resource-phone"), Whitelist.none());
-    // String resourceEmail =
-    // Jsoup.clean(request.getParameter("resource-email"), Whitelist.none());
-    // String resourceURL = Jsoup.clean(request.getParameter("resource-url"),
-    // Whitelist.none()); String resourceZIP =
-    // Jsoup.clean(request.getParameter("resource-zip"), Whitelist.none());
-    // String categoryFinances =
-    // Jsoup.clean(request.getParameter("category-finances"), Whitelist.none());
-    // String categoryFood = Jsoup.clean(request.getParameter("category-food"),
-    // Whitelist.none()); String categorySponsorship =
-    // Jsoup.clean(request.getParameter("category-sponsorship"),
-    // Whitelist.none()); String categoryMentorship =
-    // Jsoup.clean(request.getParameter("category-mentorship"),
-    // Whitelist.none()); String categoryEducation =
-    // Jsoup.clean(request.getParameter("category-education"),
-    // Whitelist.none()); String description =
-    // Jsoup.clean(request.getParameter("description-input"), Whitelist.none());
-    String resourceName = request.getParameter("resource-name");
-    String resourcePhone = request.getParameter("resource-phone");
-    String resourceEmail = request.getParameter("resource-email");
-    String resourceURL = request.getParameter("resource-url");
-    String resourceZIP = request.getParameter("resource-zip");
-    String categoryFinances = request.getParameter("category-finances");
-    String categoryFood = request.getParameter("category-food");
-    String categorySponsorship = request.getParameter("category-sponsorship");
-    String categoryMentorship = request.getParameter("category-mentorship");
-    String categoryEducation = request.getParameter("category-education");
-    String description = request.getParameter("description-input");
+    String resourceName =
+        Jsoup.clean(request.getParameter("resource-name"), Whitelist.none());
+    String resourcePhone =
+        Jsoup.clean(request.getParameter("resource-phone"), Whitelist.none());
+    String resourceEmail =
+        Jsoup.clean(request.getParameter("resource-email"), Whitelist.none());
+    String resourceURL =
+        Jsoup.clean(request.getParameter("resource-url"), Whitelist.none());
+    String resourceZIP =
+        Jsoup.clean(request.getParameter("resource-zip"), Whitelist.none());
+    String description = Jsoup.clean(request.getParameter("description-input"),
+                                     Whitelist.none());
 
-    // Print all the values:
-    // response.getWriter().println("Resource Phone: " + resourcePhone);
-    // response.getWriter().println("Resource Email: " + resourceEmail);
-    // response.getWriter().println("Resource URL: " + resourceURL);
-    // response.getWriter().println("Resource ZIP code: " + resourceZIP);
-    // response.getWriter().println("Finances: " + categoryFinances);
-    // response.getWriter().println("Food: " + categoryFood);
-    // response.getWriter().println("Sponsorship: " + categorySponsorship);
-    // response.getWriter().println("Mentorship: " + categoryMentorship);
-    // response.getWriter().println("Education: " + categoryEducation);
-    response.getWriter().println("Resource Name: " + resourceName);
-    response.getWriter().println("Resource Phone: " + resourcePhone);
-    response.getWriter().println("Resource Email: " + resourceEmail);
-    response.getWriter().println("Resource URL: " + resourceURL);
-    response.getWriter().println("Resource ZIP code: " + resourceZIP);
-    response.getWriter().println("Finances: " + categoryFinances);
-    response.getWriter().println("Food: " + categoryFood);
-    response.getWriter().println("Sponsorship: " + categorySponsorship);
-    response.getWriter().println("Mentorship: " + categoryMentorship);
-    response.getWriter().println("Education: " + categoryEducation);
-    response.getWriter().println("Description: " + description);
+    // Deal with checkboxes to avoid null pointer exception
+    Boolean categoryFinances, categoryFood, categorySponsorship,
+        categoryMentorship, categoryEducation;
+    categoryFinances = handleCheckboxes(request, "category-finances");
+    categoryFood = handleCheckboxes(request, "category-food");
+    categorySponsorship = handleCheckboxes(request, "category-sponsorship");
+    categoryMentorship = handleCheckboxes(request, "category-mentorship");
+    categoryEducation = handleCheckboxes(request, "category-education");
 
-    // Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    // KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
-    // FullEntity taskEntity = Entity.newBuilder(keyFactory.newKey())
-    //                             .set("title", title)
-    //                             .set("timestamp", timestamp)
-    //                             .build();
-    // datastore.put(taskEntity);
+    Datastore resourceDatastore =
+        DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory =
+        resourceDatastore.newKeyFactory().setKind("Resource");
+    FullEntity resourceEntity =
+        Entity.newBuilder(keyFactory.newKey())
+            .set("name", resourceName)
+            .set("phone", resourcePhone)
+            .set("email", resourceEmail)
+            .set("url", resourceURL)
+            .set("zip", resourceZIP)
+            .set("category-finances", categoryFinances)
+            .set("category-food", categoryFood)
+            .set("category-sponsorship", categorySponsorship)
+            .set("category-mentorship", categoryMentorship)
+            .set("category-education", categoryEducation)
+            .set("description", description)
+            .build();
+    resourceDatastore.put(resourceEntity);
 
-    // response.sendRedirect("/index.html");
+    response.sendRedirect("/index.html");
+  }
+
+  static Boolean handleCheckboxes(HttpServletRequest request,
+                                  String input_parameter) {
+    String input = request.getParameter(input_parameter);
+    if (input == null)
+      return false;
+    return true;
   }
 }
