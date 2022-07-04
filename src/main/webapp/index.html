@@ -3,17 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <title>Our Help</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body class="background">
-    <nav class="navbar navbar-dark navbar-expand-lg navbar-custom sticky-top mb-5">
+    <nav
+      class="navbar navbar-dark navbar-expand-lg navbar-custom sticky-top mb-5"
+    >
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Our Help</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,18 +50,20 @@
         </div>
       </div>
     </nav>
-    <div class ="container grid content">
+    <div class="container grid content">
       <div class="row mx-auto mb-5">
         <div class="col mt-5">
           <div class="card text-center">
-            <h4 class="card-header"><strong>Location-based resources</strong></h4>
+            <h4 class="card-header">
+              <strong>Location-based resources</strong>
+            </h4>
             <div class="card-body my-2">
               <h5 class="card-title mb-4">Start by entering your zipcode</h5>
-                <div class="input-group">
-                  <div class="input-group-text">Zipcode</div>
-                  <input type="number" class="form-control">
-                </div>   
-                <a href="#" class="btn btn-dark mt-4">Continue</a>                     
+              <div class="input-group">
+                <div class="input-group-text">Zipcode</div>
+                <input type="number" class="form-control" />
+              </div>
+              <a href="#" class="btn btn-dark mt-4">Continue</a>
             </div>
           </div>
         </div>
@@ -50,100 +71,179 @@
       <div class="row mx-auto">
         <div class="col mt-5">
           <div class="card mb-5">
-              <h4 class="card-header text-center"><strong>Upload a Resource</strong></h4>
-              <div class="card-body my-2">
-                <h5 class="card-title text-center">Share your resource, organization, or program!</h5>
-                <p class="card-text text-center"><i>Help others by helping us! Submit information of the resource down below.</i></p>
-                <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-12 position-relative">
-                      <label for="validationTooltip01" class="form-label">Resource Name</label>
-                      <input type="text" class="form-control" id="validationTooltip01" name="resource-name" placeholder="required" required>
-                      <div class="valid-tooltip">
-                        Good
-                      </div>
-                      <div class="invalid-tooltip">
-                        Please provide a name.
-                      </div>
-                    </div>
-                    <div class="col-md-6 position-relative">
-                      <label for="validationTooltip02" class="form-label">Phone Number</label>
-                      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control" id="validationTooltip02" name="resource-phone" placeholder="310-233-1000">
-                      <div class="valid-tooltip">
-                        Good
-                      </div>
-                      <div class="invalid-tooltip">
-                        Please provide a valid phone number.
-                      </div>
-                    </div>
-                    <div class="col-md-6 position-relative">
-                      <label for="validationTooltip03" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="validationTooltip03" name="resource-email" placeholder="name@example.com">
-                      <div class="valid-tooltip">
-                        Good
-                      </div>
-                    </div>
-                    <div class="col-md-9 position-relative">
-                      <label for="validationTooltip04" class="form-label">URL to Website</label>
-                      <input type="url" class="form-control" id="validationTooltip04" name="resource-url" placeholder="https://www.site.com" required>
-                      <div class="valid-tooltip">
-                        Good
-                      </div>
-                      <div class="invalid-tooltip">
-                        Please provide a URL.
-                      </div>
-                    </div>
-                    <div class="col-md-3 position-relative">
-                      <label for="validationTooltip05" class="form-label">Zip</label>
-                      <input type="number" pattern="[0-9]{5} | [0-9]{5}-[0-9]{4}" class="form-control" id="validationTooltip05" name="resource-zip" placeholder="90001-1234" required>
-                      <div class="valid-tooltip">
-                        Good
-                      </div>
-                      <div class="invalid-tooltip">
-                        Please provide a zipcode.
-                      </div>
-                    </div>
-                    <div class="col-md-3 position-relative">
-                      <label class="form-label"><strong>Category</strong></label>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="category-finances" value="checkbox" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                          Finances
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="category-food" value="checkbox" id="defaultCheck2">
-                        <label class="form-check-label" for="defaultCheck2">
-                          Food
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="category-sponsorship" value="checkbox" id="defaultCheck3">
-                        <label class="form-check-label" for="defaultCheck3">
-                          Sponsorship
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="category-mentorship" value="checkbox" id="defaultCheck4">
-                        <label class="form-check-label" for="defaultCheck4">
-                          Mentorship
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="category-education" value="checkbox" id="defaultCheck5">
-                        <label class="form-check-label" for="defaultCheck5">
-                          Education
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col-md-9 position-relative">
-                      <label class="form-label"><strong>Description</strong></label>
-                      <textarea name="description-input" class="form-control" rows="5" ></textarea>
-                    </div>
-                    <div class="col-12 position text-center">
-                        <button class="btn btn-dark" type="submit">Submit form</button>
-                    </div>
-                </form>
-              </div>
+            <h4 class="card-header text-center">
+              <strong>Upload a Resource</strong>
+            </h4>
+            <div class="card-body my-2">
+              <h5 class="card-title text-center">
+                Share your resource, organization, or program!
+              </h5>
+              <p class="card-text text-center">
+                <i
+                  >Help others by helping us! Submit information of the resource
+                  down below.</i
+                >
+              </p>
+              <form
+                class="row g-3 needs-validation"
+                novalidate
+                method="POST"
+                action="/new-resource"
+              >
+                <div class="col-md-12 position-relative">
+                  <label for="validationTooltip01" class="form-label"
+                    >Resource Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="validationTooltip01"
+                    name="resource-name"
+                    placeholder="required"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">Please provide a name.</div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="validationTooltip02" class="form-label"
+                    >Phone Number</label
+                  >
+                  <input
+                    type="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    class="form-control"
+                    id="validationTooltip02"
+                    name="resource-phone"
+                    placeholder="310-233-1000"
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">
+                    Please provide a valid phone number.
+                  </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="validationTooltip03" class="form-label"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="validationTooltip03"
+                    name="resource-email"
+                    placeholder="name@example.com"
+                  />
+                  <div class="valid-tooltip">Good</div>
+                </div>
+                <div class="col-md-9 position-relative">
+                  <label for="validationTooltip04" class="form-label"
+                    >URL to Website</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="validationTooltip04"
+                    name="resource-url"
+                    placeholder="https://www.site.com"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">Please provide a URL.</div>
+                </div>
+                <div class="col-md-3 position-relative">
+                  <label for="validationTooltip05" class="form-label"
+                    >Zip</label
+                  >
+                  <input
+                    type="text"
+                    pattern="[0-9]{5} | [0-9]{5}-[0-9]{4}"
+                    class="form-control"
+                    id="validationTooltip05"
+                    name="resource-zip"
+                    placeholder="90001-1234"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">Please provide a zipcode.</div>
+                </div>
+                <div class="col-md-3 position-relative">
+                  <label class="form-label"><strong>Category</strong></label>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category-finances"
+                      value="checkbox"
+                      id="defaultCheck1"
+                    />
+                    <label class="form-check-label" for="defaultCheck1">
+                      Finances
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category-food"
+                      value="checkbox"
+                      id="defaultCheck2"
+                    />
+                    <label class="form-check-label" for="defaultCheck2">
+                      Food
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category-sponsorship"
+                      value="checkbox"
+                      id="defaultCheck3"
+                    />
+                    <label class="form-check-label" for="defaultCheck3">
+                      Sponsorship
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category-mentorship"
+                      value="checkbox"
+                      id="defaultCheck4"
+                    />
+                    <label class="form-check-label" for="defaultCheck4">
+                      Mentorship
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category-education"
+                      value="checkbox"
+                      id="defaultCheck5"
+                    />
+                    <label class="form-check-label" for="defaultCheck5">
+                      Education
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-9 position-relative">
+                  <label class="form-label"><strong>Description</strong></label>
+                  <textarea
+                    name="description-input"
+                    class="form-control"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <div class="col-12 position text-center">
+                  <button class="btn btn-dark" type="submit">
+                    Submit form
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
