@@ -37,10 +37,23 @@ public class GetAllResourcesServlet extends HttpServlet {
       String url = entity.getString("url");
       String zip = entity.getString("zip");
       String description = entity.getString("description");
-      List<StringValue> category = entity.getList("category");
+      String[] category = handleListValue(entity.getList("category"));
 
-      Message newMessage = new Message(id, email, message, drink, timestamp);
-      messages.add(newMessage);
+      Resource newResource =
+          new Resource(name, phone, email, url, zip, description, category);
+      resources.add(newResource);
     }
+    Gson gson = new Gson();
+    response.setContentType("application/json");
+    response.getWriter().println(gson.toJson(resources));
+  }
+
+  // Helper function that converts a List of StringValue to an array of String
+  static String[] handleListValue(List<StringValue> listVal) {
+    String[] strArr = new String[listVal.size()];
+    for (int i = 0; i < listVal.size(); i++) {
+      strArr[i] = listVal.get(i).get();
+    }
+    return strArr;
   }
 }

@@ -1,6 +1,8 @@
 package data;
 
 import com.google.cloud.datastore.ListValue;
+import com.google.cloud.datastore.StringValue;
+import java.util.*;
 
 public final class Resource {
   private final String name;
@@ -9,10 +11,10 @@ public final class Resource {
   private final String url;
   private final String zip;
   private final String description;
-  private final ListValue category;
+  private final String[] category;
 
   public Resource(String name, String phone, String email, String url,
-                  String zip, String description, ListValue category) {
+                  String zip, String description, String[] category) {
     this.name = name;
     this.phone = phone;
     this.email = email;
