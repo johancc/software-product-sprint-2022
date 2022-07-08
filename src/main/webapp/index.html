@@ -59,11 +59,20 @@
             </h4>
             <div class="card-body my-2">
               <h5 class="card-title mb-4">Start by entering your zipcode</h5>
-              <div class="input-group">
-                <div class="input-group-text">Zipcode</div>
-                <input type="number" class="form-control" />
-              </div>
-              <a href="#" class="btn btn-dark mt-4">Continue</a>
+              <form
+                class="row g-3 needs-validation"
+                novalidate
+                method="GET"
+                action="/get-zip-resources"
+              >
+                <div class="input-group">
+                  <div class="input-group-text">Zipcode</div>
+                  <input name="zipCode" type="number" class="form-control" />
+                </div>
+                <div class="col-12 position text-center">
+                  <button class="btn btn-dark" type="submit">Continue</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
