@@ -9,6 +9,7 @@ import com.google.cloud.datastore.StringValue;
 import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.gson.Gson;
+import data.GeoPoint;
 import data.Resource;
 import java.io.IOException;
 import java.net.URI;
@@ -63,19 +64,18 @@ public class GetZipResourcesServlet extends HttpServlet {
       e.printStackTrace();
     }
 
-    // Place holder for upper and lower bound calculation
-    Double minLat = userLat - 2;
-    Double maxLat = userLat + 2;
-    Double minLon = userLon - 2;
-    Double maxLon = userLon + 2;
+    // Calculate bounding box using user's zip code as center
+    // Currently uses 5km as a bounding range
+    GeoPoint point = new GeoPoint(userLat, userLon);
+    point.getBoundingBox(5.0);
 
     // Latitude filter query
-    Query<Entity> latQuery =
-        Query.newEntityQueryBuilder()
-            .setKind("Resource")
-            .setFilter(CompositeFilter.and(PropertyFilter.lt("lat", maxLat),
-                                           PropertyFilter.gt("lat", minLat)))
-            .build();
+    Query<Entity> latQuery = Query.newEntityQueryBuilder()
+                                 .setKind("Resource")
+                                 .setFilter(CompositeFilter.and(
+                                     PropertyFilter.lt("lat", point.maxLat),
+                                     PropertyFilter.gt("lat", point.minLat)))
+                                 .build();
     QueryResults<Entity> latResults = datastore.run(latQuery);
     List<Resource> latFiltered = new ArrayList<>();
     while (latResults.hasNext()) {
@@ -98,12 +98,12 @@ public class GetZipResourcesServlet extends HttpServlet {
     }
 
     // Longitude filter query
-    Query<Entity> lonQuery =
-        Query.newEntityQueryBuilder()
-            .setKind("Resource")
-            .setFilter(CompositeFilter.and(PropertyFilter.lt("lon", maxLon),
-                                           PropertyFilter.gt("lon", minLon)))
-            .build();
+    Query<Entity> lonQuery = Query.newEntityQueryBuilder()
+                                 .setKind("Resource")
+                                 .setFilter(CompositeFilter.and(
+                                     PropertyFilter.lt("lon", point.maxLon),
+                                     PropertyFilter.gt("lon", point.minLon)))
+                                 .build();
     QueryResults<Entity> results = datastore.run(lonQuery);
     List<Resource> lonFiltered = new ArrayList<>();
     while (results.hasNext()) {
