@@ -12,9 +12,12 @@ public final class Resource {
   private final String zip;
   private final String description;
   private final String[] category;
+  private final Double lat;
+  private final Double lon;
 
   public Resource(String name, String phone, String email, String url,
-                  String zip, String description, String[] category) {
+                  String zip, String description, String[] category, Double lat,
+                  Double lon) {
     this.name = name;
     this.phone = phone;
     this.email = email;
@@ -22,5 +25,7 @@ public final class Resource {
     this.zip = zip;
     this.description = description;
     this.category = category;
+    this.lat = lat;
+    this.lon = lon;
   }
 }
