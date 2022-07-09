@@ -1,3 +1,1 @@
 runtime: java11
-includes:
-  - env_variables.yaml
