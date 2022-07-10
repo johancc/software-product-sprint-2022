@@ -11,7 +11,7 @@ function loadResources() {
 
 function createResourceElement(newResource) {
   const dashCard = document.createElement("div");
-  // dashCard.className = "row";
+  dashCard.className = "row";
   //  dashCard.className = 'Resource';
 
   const nameElement = document.createElement("h5");
@@ -45,7 +45,7 @@ function createResourceElement(newResource) {
   phoneElement;
   emailElement;
   zipElement;
-  categoryElement`</ul>` `<div class="card-URL">`;
+  categoryElement`</ul>` `<div class="card-body">`;
   urlElement`</div>` `</div>`;
   return dashCard;
 }
