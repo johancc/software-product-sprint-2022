@@ -1,28 +1,51 @@
-// Copyright 2020 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+function loadResources() {
+  fetch("/get-all-resources")
+      .then((response) => response.json())
+      .then((resources) => {
+        const resourceListElement = document.getElementById("resource-list");
+        resources.forEach((newResource) => {
+          resourceListElement.appendChild(createResourceElement(newResource));
+        });
+      });
+}
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-    const greetings =
-        ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function createResourceElement(newResource) {
+  const dashCard = document.createElement("div");
+  // dashCard.className = "row";
+  //  dashCard.className = 'Resource';
 
-    // Pick a random greeting.
-    const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  const nameElement = document.createElement("h5");
+  nameElement.innerText = newResource.name;
 
-    // Add it to the page.
-    const greetingContainer = document.getElementById('greeting-container');
-    greetingContainer.innerText = greeting;
+  const phoneElement = document.createElement("li");
+  phoneElement.innerText = newResource.phone;
+
+  const emailElement = document.createElement("li");
+  emailElement.innerText = newResource.email;
+
+  const urlElement = document.createElement("a");
+  urlElement.innerText = newResource.url;
+
+  const zipElement = document.createElement("li");
+  zipElement.innerText = newResource.zip;
+
+  const descriptionElement = document.createElement("p");
+  descriptionElement.innerText = newResource.description;
+
+  const categoryElement = document.createElement("li");
+  categoryElement.innerText = newResource.category;
+
+  // const topMostDiv = document.createElement("div");
+  // topMostDiv.className = "col-4";
+  // dashCard.appendChild(topMostDiv);
+
+  dashCard.innerHTML = `<div class='col-4'>` `<div class='card-body'>`;
+  nameElement;
+  descriptionElement`</div>` `<ul class='list-group list-group-flush'>`;
+  phoneElement;
+  emailElement;
+  zipElement;
+  categoryElement`</ul>` `<div class="card-URL">`;
+  urlElement`</div>` `</div>`;
+  return dashCard;
 }
