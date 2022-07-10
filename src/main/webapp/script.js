@@ -11,8 +11,8 @@ function loadResources() {
 
 function createResourceElement(newResource) {
   const dashCard = document.createElement("div");
-  dashCard.className = "row";
-  //  dashCard.className = 'Resource';
+  // dashCard.className = "row";
+  dashCard.className = 'Resource';
 
   const nameElement = document.createElement("h5");
   nameElement.innerText = newResource.name;

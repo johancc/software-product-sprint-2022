@@ -7,4 +7,14 @@
 }
 
 .searchBar {
+    justify-content: end;
+ }
+
+.navbar-custom {
+    background-color: #20604A;
+}
+
+.Resource {
+    color: white;
+    background-color: #20604A;
 }
