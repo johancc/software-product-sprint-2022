@@ -39,13 +39,14 @@ function createResourceElement(newResource) {
   // topMostDiv.className = "col-4";
   // dashCard.appendChild(topMostDiv);
 
-  dashCard.innerHTML = `<div class='col-4'>` `<div class='card-body'>`;
+  dashCard.innerHTML =
+      `<div class='col-4'>` `<div class="card">` `<div class='card-body'>`;
   nameElement;
   descriptionElement`</div>` `<ul class='list-group list-group-flush'>`;
   phoneElement;
   emailElement;
   zipElement;
   categoryElement`</ul>` `<div class="card-body">`;
-  urlElement`</div>` `</div>`;
+  urlElement`</div>` `</div>` `</div>`;
   return dashCard;
 }
