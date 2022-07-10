@@ -37,7 +37,6 @@ public class GetZipResourcesServlet extends HttpServlet {
     String userZip = request.getParameter("zipCode");
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
-    // Convert user input zip cod to latitude and longitude
     // Generate Latitude and Longitude based on Zip Code from user
     Double userLat = 0.0, userLon = 0.0;
     HttpClient client = HttpClient.newHttpClient();
@@ -82,7 +81,6 @@ public class GetZipResourcesServlet extends HttpServlet {
       Entity entity = latResults.next();
 
       String name = entity.getString("name");
-      System.out.println("hiiiiiiiii" + name);
       String phone = entity.getString("phone");
       String email = entity.getString("email");
       String url = entity.getString("url");

@@ -1,9 +1,5 @@
 package data;
 
-import com.google.cloud.datastore.ListValue;
-import com.google.cloud.datastore.StringValue;
-import java.util.*;
-
 public final class Resource {
   private final String name;
   private final String phone;
