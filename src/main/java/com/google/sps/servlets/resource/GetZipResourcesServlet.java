@@ -12,10 +12,6 @@ import com.google.gson.Gson;
 import data.GeoPoint;
 import data.Resource;
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,10 +19,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 @WebServlet("/get-zip-resources")
 public class GetZipResourcesServlet extends HttpServlet {
@@ -37,35 +29,9 @@ public class GetZipResourcesServlet extends HttpServlet {
     String userZip = request.getParameter("zipCode");
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
-    // Generate Latitude and Longitude based on Zip Code from user
-    Double userLat = 0.0, userLon = 0.0;
-    HttpClient client = HttpClient.newHttpClient();
-    HttpRequest req =
-        HttpRequest.newBuilder()
-            .uri(URI.create(
-                "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC7Xskjjq_cfnffdTfXYmyUBkcekfu3xbg&components=postal_code:" +
-                userZip + "&result_type=street_address"))
-            .build();
-    try {
-      HttpResponse<String> res =
-          client.send(req, HttpResponse.BodyHandlers.ofString());
-      String resStr = res.body();
-      JSONParser parser = new JSONParser();
-      JSONArray resArr =
-          (JSONArray)((JSONObject)parser.parse(resStr)).get("results");
-      JSONObject resLatLon =
-          (JSONObject)((JSONObject)((JSONObject)resArr.get(0)).get("geometry"))
-              .get("location");
-      userLat = new Double(resLatLon.get("lat").toString());
-      userLon = new Double(resLatLon.get("lng").toString());
-    } catch (InterruptedException | ParseException e) {
-      response.getWriter().println("Failed to convert Zip Code");
-      e.printStackTrace();
-    }
-
-    // Calculate bounding box using user's zip code as center
-    // Currently uses 5km as a bounding range
-    GeoPoint point = new GeoPoint(userLat, userLon);
+    // Convert user-input zip code to lat and lon
+    GeoPoint point = new GeoPoint(userZip);
+    // Calculate nearby lat and lon range
     point.getBoundingBox(5.0);
 
     // Latitude filter query

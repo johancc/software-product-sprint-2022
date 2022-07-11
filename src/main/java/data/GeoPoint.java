@@ -1,11 +1,29 @@
 package data;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+/**
+ * For handling latitude and longitude related operations.
+ *
+ * @implNote bounding box calculation based on
+ *           https://stackoverflow.com/questions/238260/how-to-calculate-the-bounding-box-for-a-given-lat-lng-location
+ */
 public class GeoPoint {
   // Fixed consts
-  private Double centerLat;
-  private Double centerLon;
   private Double WGS84_a = 6378137.0; // Major semiaxis [m]
   private Double WGS84_b = 6356752.3; // Minor semiaxis [m]
+
+  // Center lat and lon (user input)
+  public Double centerLat;
+  public Double centerLon;
 
   // Bounding box variables, to be calculated
   public Double minLon;
@@ -13,13 +31,62 @@ public class GeoPoint {
   public Double maxLon;
   public Double maxLat;
 
-  // Constructor
+  /**
+   * Class Constructor based on known latitude and longitude
+   *
+   * @param centerLat the latitude of the bounding box center point
+   * @param centerLon the longitude of the bounding box center point
+   */
   public GeoPoint(Double centerLat, Double centerLon) {
     this.centerLat = centerLat;
     this.centerLon = centerLon;
   }
 
-  // Calculate bounding box for a given range in km
+  /**
+   * Class Constructor that generates center latitude and longitude based on zip
+   * code with Google Maps API
+   *
+   * @param userZip user-input zip code
+   */
+  public GeoPoint(String userZip) {
+    HttpClient client = HttpClient.newHttpClient();
+    HttpRequest req =
+        HttpRequest.newBuilder()
+            .uri(URI.create(
+                "https://maps.googleapis.com/maps/api/geocode/json?key=" +
+                System.getenv("GOOGLE_MAPS_API_KEY") +
+                "&components=postal_code:" + userZip +
+                "&result_type=street_address"))
+            .build();
+    try {
+      // Call Google Maps API
+      HttpResponse<String> res =
+          client.send(req, HttpResponse.BodyHandlers.ofString());
+      // Extract latitude and longitude info from response
+      String resStr = res.body();
+      JSONParser parser = new JSONParser();
+      JSONArray resArr =
+          (JSONArray)((JSONObject)parser.parse(resStr)).get("results");
+      JSONObject resLatLon =
+          (JSONObject)((JSONObject)((JSONObject)resArr.get(0)).get("geometry"))
+              .get("location");
+      // Set latitude and longitude
+      centerLat = Double.valueOf(resLatLon.get("lat").toString());
+      centerLon = Double.valueOf(resLatLon.get("lng").toString());
+    } catch (InterruptedException | ParseException e) {
+      e.printStackTrace();
+      System.out.println("Failed to parse JSON");
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.out.println("Failed to get Google Maps API response");
+    }
+  }
+
+  /**
+   * Calculate bounding box for a given range in km
+   *
+   * @param km desired range of nearby box in kilometers
+   */
   public void getBoundingBox(Double km) {
     Double lat = deg2rad(centerLat);
     Double lon = deg2rad(centerLon);
@@ -46,10 +113,4 @@ public class GeoPoint {
     Double Bd = WGS84_b * Math.sin(lat);
     return Math.sqrt((An * An + Bn * Bn) / (Ad * Ad + Bd * Bd));
   }
-
-  /**
-   * Note:
-   * Implementation based on
-   * https://stackoverflow.com/questions/238260/how-to-calculate-the-bounding-box-for-a-given-lat-lng-location
-   */
 }
