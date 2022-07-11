@@ -1,9 +1,8 @@
 .background {
   margin-left: auto;
   margin-right: auto;
-  font-family: courier;
   padding-bottom: 300px;
-  background-color: #D8F1D5;
+  background-color: #D9EEE1;
 }
 
 .content {
@@ -11,5 +10,36 @@
 }
 
 .navbar-custom {
-    background-color: #20604A;
+    background-color: #282A35;
+    color: white;
+
+}
+
+.big-text {
+    font-size: 70px;
+}
+
+.med-text {
+    font-size: 50px;
+}
+
+.med-label {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 25px;
+    border-radius: 60px;
+    background-color: #0F212E;
+    color: white;
+}
+
+.grn-btn {
+    background-color: #132E0F;
+    color: white;
+}
+
+.container-padding {
+    padding-top: 10px;
+    padding-bottom: 100px;
 }
