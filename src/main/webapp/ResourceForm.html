@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contribute</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="background">
+    <nav
+      class="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top shadow mb-5"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand mx-5" href="index.html"><b>Our Help</b></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-3">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="#">Resources</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="ResourceForm.html">Contribute</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container grid content">
+      <div class="row mx-auto">
+        <div class="col mt-5">
+          <div class="card mb-5">
+            <h4 class="card-header text-center">
+              <strong>Upload a Resource</strong>
+            </h4>
+            <div class="card-body my-2">
+              <h5 class="card-title text-center">
+                Share your resource, organization, or program!
+              </h5>
+              <p class="card-text text-center">
+                <i>
+                  Help others by helping us! Submit information of the resource
+                  down below.
+                </i>
+              </p>
+              <form
+                id="ResourceForm"
+                class="row g-3 needs-validation"
+                method="POST"
+                action="/new-resource"
+                novalidate
+              >
+                <div class="col-md-12 position-relative">
+                  <label for="nameEntry" class="form-label">
+                    Resource name
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nameEntry"
+                    name="name"
+                    placeholder="City Food Bank"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">Please provide a name.</div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="phoneEntry" class="form-label">
+                    Phone number
+                  </label>
+                  <input
+                    type="tel"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    class="form-control"
+                    id="phoneEntry"
+                    name="phone"
+                    placeholder="310-233-1000"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">
+                    Please provide a valid phone number.
+                  </div>
+                </div>
+                <div class="col-md-6 position-relative">
+                  <label for="emailEntry" class="form-label"> Email </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailEntry"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">
+                    Please provide a valid email.
+                  </div>
+                </div>
+                <div class="col-md-9 position-relative">
+                  <label for="urlEntry" class="form-label">
+                    URL to Website
+                  </label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="urlEntry"
+                    name="url"
+                    placeholder="www.example.com"
+                    onblur="validateURL(this)"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">Please provide a URL.</div>
+                </div>
+                <div class="col-md-3 position-relative">
+                  <label for="zipCodeEntry" class="form-label"> Zip </label>
+                  <input
+                    type="text"
+                    pattern="[0-9]{5}|[0-9]{5}-[0-9]{4}"
+                    class="form-control"
+                    id="zipCodeEntry"
+                    name="zip"
+                    placeholder="90001-1234"
+                    required
+                  />
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">Please provide a zipcode.</div>
+                </div>
+                <div class="col-md-3 position-relative">
+                  <label class="form-label"><strong>Category</strong></label>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category"
+                      value="finances"
+                      id="defaultCheck1"
+                    />
+                    <label class="form-check-label" for="defaultCheck1">
+                      Finances
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category"
+                      value="food"
+                      id="defaultCheck2"
+                    />
+                    <label class="form-check-label" for="defaultCheck2">
+                      Food
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category"
+                      value="sponsorship"
+                      id="defaultCheck3"
+                    />
+                    <label class="form-check-label" for="defaultCheck3">
+                      Sponsorship
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category"
+                      value="mentorship"
+                      id="defaultCheck4"
+                    />
+                    <label class="form-check-label" for="defaultCheck4">
+                      Mentorship
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="category"
+                      value="education"
+                      id="defaultCheck5"
+                    />
+                    <label class="form-check-label" for="defaultCheck5">
+                      Education
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-9 position-relative">
+                  <label class="form-label"><strong>Description</strong></label>
+                  <textarea
+                    name="description"
+                    class="form-control"
+                    rows="5"
+                    placeholder="City Food Bank is comitted to serving individuals going through food insecurity."
+                    required
+                  ></textarea>
+                  <div class="valid-tooltip">Good</div>
+                  <div class="invalid-tooltip">
+                    Please provide a description.
+                  </div>
+                </div>
+                <div class="col-12 position text-center">
+                  <button class="btn btn-dark" type="submit">
+                    Submit form
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function formValidation() {
+        "use strict";
+
+        // Fetch the Resource Form
+        var forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over inputs and prevent invalid submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
