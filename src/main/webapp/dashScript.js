@@ -51,12 +51,3 @@ function createResourceElement(newResource) {
   `</div>`;
   return dashCard;
 }
-
-function validateURL(link) {
-  var url = link.value;
-  if (!~url.indexOf("http")) {
-    url = "http://" + url;
-  }
-  link.value = url;
-  return link
-}
