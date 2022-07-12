@@ -33,12 +33,14 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item mx-3">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link active" href="#">Resources</a>
@@ -66,16 +68,17 @@
               </h5>
               <p class="card-text text-center">
                 <i>
-                  Help others by helping us! Submit information of the resource down below.
+                  Help others by helping us! Submit information of the resource
+                  down below.
                 </i>
               </p>
               <form
                 id="ResourceForm"
-                class="row g-3 needs-validation" 
+                class="row g-3 needs-validation"
                 method="POST"
                 action="/new-resource"
                 novalidate
-                >
+              >
                 <div class="col-md-12 position-relative">
                   <label for="nameEntry" class="form-label">
                     Resource name
@@ -84,7 +87,7 @@
                     type="text"
                     class="form-control"
                     id="nameEntry"
-                    name="resourceName"
+                    name="name"
                     placeholder="City Food Bank"
                     required
                   />
@@ -100,7 +103,7 @@
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     class="form-control"
                     id="phoneEntry"
-                    name="resource-phone"
+                    name="phone"
                     placeholder="310-233-1000"
                     required
                   />
@@ -110,14 +113,12 @@
                   </div>
                 </div>
                 <div class="col-md-6 position-relative">
-                  <label for="emailEntry" class="form-label">
-                    Email
-                  </label>
+                  <label for="emailEntry" class="form-label"> Email </label>
                   <input
                     type="email"
                     class="form-control"
                     id="emailEntry"
-                    name="resource-email"
+                    name="email"
                     placeholder="name@example.com"
                     required
                   />
@@ -134,7 +135,7 @@
                     type="url"
                     class="form-control"
                     id="urlEntry"
-                    name="resource-url"
+                    name="url"
                     placeholder="www.example.com"
                     onblur="validateURL(this)"
                     required
@@ -143,15 +144,13 @@
                   <div class="invalid-tooltip">Please provide a URL.</div>
                 </div>
                 <div class="col-md-3 position-relative">
-                  <label for="zipCodeEntry" class="form-label">
-                    Zip
-                  </label>
+                  <label for="zipCodeEntry" class="form-label"> Zip </label>
                   <input
                     type="text"
                     pattern="[0-9]{5}|[0-9]{5}-[0-9]{4}"
                     class="form-control"
                     id="zipCodeEntry"
-                    name="resource-zip"
+                    name="zip"
                     placeholder="90001-1234"
                     required
                   />
@@ -164,8 +163,8 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      name="categoryFinances"
-                      value="checkbox"
+                      name="category"
+                      value="finances"
                       id="defaultCheck1"
                     />
                     <label class="form-check-label" for="defaultCheck1">
@@ -176,8 +175,8 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      name="category-food"
-                      value="checkbox"
+                      name="category"
+                      value="food"
                       id="defaultCheck2"
                     />
                     <label class="form-check-label" for="defaultCheck2">
@@ -188,8 +187,8 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      name="category-sponsorship"
-                      value="checkbox"
+                      name="category"
+                      value="sponsorship"
                       id="defaultCheck3"
                     />
                     <label class="form-check-label" for="defaultCheck3">
@@ -200,8 +199,8 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      name="category-mentorship"
-                      value="checkbox"
+                      name="category"
+                      value="mentorship"
                       id="defaultCheck4"
                     />
                     <label class="form-check-label" for="defaultCheck4">
@@ -212,8 +211,8 @@
                     <input
                       class="form-check-input"
                       type="checkbox"
-                      name="category-education"
-                      value="checkbox"
+                      name="category"
+                      value="education"
                       id="defaultCheck5"
                     />
                     <label class="form-check-label" for="defaultCheck5">
@@ -224,14 +223,16 @@
                 <div class="col-md-9 position-relative">
                   <label class="form-label"><strong>Description</strong></label>
                   <textarea
-                    name="description-input"
+                    name="description"
                     class="form-control"
                     rows="5"
                     placeholder="City Food Bank is comitted to serving individuals going through food insecurity."
                     required
                   ></textarea>
                   <div class="valid-tooltip">Good</div>
-                  <div class="invalid-tooltip">Please provide a description.</div>
+                  <div class="invalid-tooltip">
+                    Please provide a description.
+                  </div>
                 </div>
                 <div class="col-12 position text-center">
                   <button class="btn btn-dark" type="submit">
@@ -246,24 +247,27 @@
     </div>
     <script>
       (function formValidation() {
-        'use strict'
+        "use strict";
 
         // Fetch the Resource Form
-        var forms = document.querySelectorAll('.needs-validation')
+        var forms = document.querySelectorAll(".needs-validation");
 
         // Loop over inputs and prevent invalid submission
-        Array.prototype.slice.call(forms)
-          .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            "submit",
+            function (event) {
               if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
+                event.preventDefault();
+                event.stopPropagation();
               }
 
-              form.classList.add('was-validated')
-            }, false)
-          })
-      })()
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
     </script>
   </body>
 </html>

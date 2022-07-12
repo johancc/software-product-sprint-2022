@@ -26,18 +26,13 @@ public class UploadResourceServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
     // Sanitize user input to remove HTML tags and JavaScript.
-    String name =
-        Jsoup.clean(request.getParameter("resource-name"), Safelist.none());
-    String phone =
-        Jsoup.clean(request.getParameter("resource-phone"), Safelist.none());
-    String email =
-        Jsoup.clean(request.getParameter("resource-email"), Safelist.none());
-    String url =
-        Jsoup.clean(request.getParameter("resource-url"), Safelist.none());
-    String zip =
-        Jsoup.clean(request.getParameter("resource-zip"), Safelist.none());
+    String name = Jsoup.clean(request.getParameter("name"), Safelist.none());
+    String phone = Jsoup.clean(request.getParameter("phone"), Safelist.none());
+    String email = Jsoup.clean(request.getParameter("email"), Safelist.none());
+    String url = Jsoup.clean(request.getParameter("url"), Safelist.none());
+    String zip = Jsoup.clean(request.getParameter("zip"), Safelist.none());
     String description =
-        Jsoup.clean(request.getParameter("description-input"), Safelist.none());
+        Jsoup.clean(request.getParameter("description"), Safelist.none());
     String[] category = request.getParameterValues("category");
 
     // Generate Latitude and Longitude based on Zip Code from user
