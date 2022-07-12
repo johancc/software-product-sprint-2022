@@ -34,12 +34,8 @@ function createResourceElement(newResource) {
   const categoryElement = document.createElement('li');
   categoryElement.innerText = newResource.category;
 
-  const topMostDiv = document.createElement("div");
-  topMostDiv.className = "col-4";
-  dashCard.appendChild(topMostDiv);
-
   dashCard.innerHTML = `<div class='col-4'>`
-  topMostDiv
+  `<div class='card-body'>`
   nameElement
   descriptionElement
   `</div>`
