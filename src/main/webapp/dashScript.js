@@ -10,44 +10,25 @@ function loadResources() {
 }
 
 function createResourceElement(newResource) {
-  const dashCard = document.createElement("div");
-  dashCard.className = 'Resource';
+  let {name : resource_name, phone, email, url, zip, description, category} =
+      newResource;
 
-  const nameElement = document.createElement('h5');
-  nameElement.innerText = newResource.name;
-
-  const phoneElement = document.createElement('li');
-  phoneElement.innerText = newResource.phone;
-
-  const emailElement = document.createElement('li');
-  emailElement.innerText = newResource.email;
-
-  const urlElement = document.createElement('a');
-  urlElement.innerText = newResource.url;
-
-  const zipElement = document.createElement('li');
-  zipElement.innerText = newResource.zip;
-
-  const descriptionElement = document.createElement('p');
-  descriptionElement.innerText = newResource.description;
-
-  const categoryElement = document.createElement('li');
-  categoryElement.innerText = newResource.category;
-
-  dashCard.innerHTML = `<div class='col-4'>`
-  `<div class='card-body'>`
-  nameElement
-  descriptionElement
-  `</div>`
-  `<ul class='list-group list-group-flush'>`
-  phoneElement
-  emailElement
-  zipElement
-  categoryElement
-  `</ul>`
-  `<div class="card-body">`
-  urlElement
-  `</div>`
-  `</div>`;
+  dashCard.innerHTML = `
+    <div class='col-4' className="Resource"> 
+      <div class='card-body'>
+        <h5> ${resource_name} </h5>
+        <ul class='list-group list-group-flush'>
+          <li> ${phone} </li> 
+          <li> ${email} </li>
+      
+          <li> ${zip} </li>
+          <p> ${description}</p> 
+          <li> ${category} </li> 
+        </ul>
+        <div class="card-body">
+          <a href="${url}"> ${url} </a> 
+        </div>
+      </div>
+    </div>`;
   return dashCard;
 }
