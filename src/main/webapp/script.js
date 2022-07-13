@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function validateURL (link) {
-    var url = link.value;
-    if (!~url.indexOf("http")) {
-        url = "http://" + url;
-    }
-    link.value = url;
-    return link
+function validateURL(link) {
+  var url = link.value;
+  if (!~url.indexOf("http")) {
+    url = "http://" + url;
   }
+  link.value = url;
+  return link
+}
