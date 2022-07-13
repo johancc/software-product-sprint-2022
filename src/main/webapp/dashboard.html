@@ -32,12 +32,12 @@
     <title>Dashboard</title>
   </head>
 
-  <body class="dashboard" onload="loadResources()">
+  <body class="dashboard" onload="LoadResources()">
     <nav
-      class="navbar navbar-dark navbar-expand-lg navbar-custom sticky-top mb-5"
+      class="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top shadow mb-5"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Our Help</a>
+        <a class="navbar-brand mx-5" href="index.html"><b>Our Help</b></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -51,31 +51,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link active gx-5" href="#">Resources</a>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="dashboard.html">Resources</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="ResourceForm.html">Contribute</a>
+            </li>
+            <li class="nav-item mx-3">
               <a class="nav-link active" href="#">About</a>
             </li>
           </ul>
         </div>
       </div>
       <form
-                class="searchBar form-inline md-form form-sm mt-0"
-                action="/dashboardSearch"
-                method="POST"
-              >
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input
-                  class="form-control form-control-sm ml-3 w-90"
-                  type="text"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-              </form>
+        class="searchBar form-inline md-form form-sm mt-0"
+        action="/dashboardSearch"
+        method="POST"
+      >
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input
+          class="form-control form-control-sm ml-3 w-90"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form>
     </nav>
     <h1 class="mb-3 d-flex justify-content-center">Resource Dashboard</h1>
     <div id="resource-list"></div>
