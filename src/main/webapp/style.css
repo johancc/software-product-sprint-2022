@@ -2,7 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 300px;
-  background-color: #D9EEE1;
+  background-color: #d9eee1;
 }
 
 .content {
@@ -10,36 +10,39 @@
 }
 
 .navbar-custom {
-    background-color: #282A35;
-    color: white;
-
+  background-color: #282a35;
+  color: white;
 }
 
 .big-text {
-    font-size: 70px;
+  font-size: 70px;
 }
 
 .med-text {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .med-label {
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 18px;
-    padding-right: 18px;
-    font-size: 25px;
-    border-radius: 60px;
-    background-color: #0F212E;
-    color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 25px;
+  border-radius: 60px;
+  background-color: #0f212e;
+  color: white;
 }
 
 .grn-btn {
-    background-color: #132E0F;
-    color: white;
+  background-color: #132e0f;
+  color: white;
 }
 
 .container-padding {
-    padding-top: 10px;
-    padding-bottom: 100px;
+  padding-top: 10px;
+  padding-bottom: 100px;
+}
+
+#map {
+  height: 100%;
 }

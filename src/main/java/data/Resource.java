@@ -2,14 +2,14 @@ package data;
 
 public final class Resource {
   private final String name;
-  private final String phone;
-  private final String email;
-  private final String url;
-  private final String zip;
-  private final String description;
-  private final String[] category;
-  private final Double lat;
-  private final Double lon;
+  private String phone;
+  private String email;
+  private String url;
+  private String zip;
+  private String description;
+  private String[] category;
+  private Double lat;
+  private Double lon;
 
   // Constructor
   public Resource(String name, String phone, String email, String url,
@@ -38,5 +38,12 @@ public final class Resource {
     this.category = category;
     this.lat = 0.0;
     this.lon = 0.0;
+  }
+
+  // Aggregated Resource Constructore
+  public Resource(String name, Double lat, Double lon) {
+    this.name = name;
+    this.lat = lat;
+    this.lon = lon;
   }
 }
