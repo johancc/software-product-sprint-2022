@@ -1,18 +1,36 @@
 .background {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 300px;
-  background-color: #D9EEE1;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 300px;
+    background-color: #d9eee1;
+}
+
+.background-yellow {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 300px;
+    background-color: #E7E8BA;
+}
+
+.background-tan {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 300px;
+    background-color: #F2EBD9;
 }
 
 .content {
-  width: 750px;
+    width: 750px;
+}
+
+.container-padding {
+    padding-top: 10px;
+    padding-bottom: 100px;
 }
 
 .navbar-custom {
-    background-color: #282A35;
+    background-color: #282a35;
     color: white;
-
 }
 
 .big-text {
@@ -21,6 +39,21 @@
 
 .med-text {
     font-size: 50px;
+}
+
+.tiny-text {
+    font-size: 13px;
+}
+
+.pink-label {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 25px;
+    border-radius: 60px;
+    background-color: #c097a5;
+    color: white;
 }
 
 .med-label {
@@ -34,12 +67,29 @@
     color: white;
 }
 
+.sml-label {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 15px;
+    border-radius: 60px;
+    background-color: #0F212E;
+    color: white;
+}
+
 .grn-btn {
     background-color: #132E0F;
     color: white;
 }
 
-.container-padding {
-    padding-top: 10px;
-    padding-bottom: 100px;
+.pink-btn {
+    background-color: #c097a5;
+    color: white;
+}
+
+.tag-textbox {
+    height: 22px;
+    width: 135px;
+    font-size: 15px;
 }

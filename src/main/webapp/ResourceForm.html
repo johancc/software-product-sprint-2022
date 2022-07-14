@@ -18,9 +18,9 @@
     ></script>
   </head>
 
-  <body class="background">
+  <body class="background-yellow">
     <nav
-      class="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top shadow mb-5"
+      class="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top shadow mb-3"
     >
       <div class="container-fluid">
         <a class="navbar-brand mx-5" href="index.html"><b>Our Help</b></a>
@@ -55,37 +55,38 @@
         </div>
       </div>
     </nav>
-    <div class="container grid content">
+    <div class="container grid content container-padding">
       <div class="row mx-auto">
-        <div class="col mt-5">
-          <div class="card mb-5">
-            <h4 class="card-header text-center">
-              <strong>Upload a Resource</strong>
-            </h4>
-            <div class="card-body my-2">
-              <h5 class="card-title text-center">
-                Share your resource, organization, or program!
-              </h5>
-              <p class="card-text text-center">
-                <i>
-                  Help others by helping us! Submit information of the resource
-                  down below.
-                </i>
-              </p>
-              <form
-                id="ResourceForm"
-                class="row g-3 needs-validation"
-                method="POST"
-                action="/new-resource"
-                novalidate
-              >
-                <div class="col-md-12 position-relative">
-                  <label for="nameEntry" class="form-label">
+        <div class="col">
+          <h1 class="big-text text-center mb-4">
+            <b>Help Contribute</b>
+          </h1>
+        </div>          
+      </div>
+      <div class="row mx-auto mb-5">
+        <img class="col-md-6 mx-auto rounded-pill shadow-lg" src="ContributePageGraphic.png">
+      </div>
+      <div class="row mb-5 mx-5">
+        <div class="col-md-12 mx-auto">
+            <h3 class="text-center pink-label shadow">
+              Help us extend our reach! Submit information about an organization, program, or opportunity that we may not know about.
+            </h3>            
+        </div>
+      </div>    
+      <form
+        id="ResourceForm"
+        class="row g-3 needs-validation"
+        method="POST"
+        action="/new-resource"
+        novalidate
+        >
+        <div class="col-md-12 position-relative mb-3">
+                  <label for="nameEntry" class="form-label sml-label">
                     Resource name
                   </label>
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control rounded-pill"
                     id="nameEntry"
                     name="name"
                     placeholder="City Food Bank"
@@ -93,15 +94,15 @@
                   />
                   <div class="valid-tooltip">Good</div>
                   <div class="invalid-tooltip">Please provide a name.</div>
-                </div>
-                <div class="col-md-6 position-relative">
-                  <label for="phoneEntry" class="form-label">
+        </div>
+        <div class="col-md-6 position-relative mb-3">
+                  <label for="phoneEntry" class="form-label sml-label">
                     Phone number
                   </label>
                   <input
                     type="tel"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    class="form-control"
+                    class="form-control rounded-pill"
                     id="phoneEntry"
                     name="phone"
                     placeholder="310-233-1000"
@@ -111,12 +112,12 @@
                   <div class="invalid-tooltip">
                     Please provide a valid phone number.
                   </div>
-                </div>
-                <div class="col-md-6 position-relative">
-                  <label for="emailEntry" class="form-label"> Email </label>
+        </div>
+        <div class="col-md-6 position-relative mb-3">
+                  <label for="emailEntry" class="form-label sml-label"> Email </label>
                   <input
                     type="email"
-                    class="form-control"
+                    class="form-control rounded-pill"
                     id="emailEntry"
                     name="email"
                     placeholder="name@example.com"
@@ -126,14 +127,14 @@
                   <div class="invalid-tooltip">
                     Please provide a valid email.
                   </div>
-                </div>
-                <div class="col-md-9 position-relative">
-                  <label for="urlEntry" class="form-label">
+        </div>
+        <div class="col-md-9 position-relative mb-3">
+                  <label for="urlEntry" class="form-label sml-label">
                     URL to Website
                   </label>
                   <input
                     type="url"
-                    class="form-control"
+                    class="form-control rounded-pill"
                     id="urlEntry"
                     name="url"
                     placeholder="www.example.com"
@@ -142,13 +143,13 @@
                   />
                   <div class="valid-tooltip">Good</div>
                   <div class="invalid-tooltip">Please provide a URL.</div>
-                </div>
-                <div class="col-md-3 position-relative">
-                  <label for="zipCodeEntry" class="form-label"> Zip </label>
+        </div>
+        <div class="col-md-3 position-relative mb-3">
+                  <label for="zipCodeEntry" class="form-label sml-label">Zip code</label>
                   <input
                     type="text"
                     pattern="[0-9]{5}|[0-9]{5}-[0-9]{4}"
-                    class="form-control"
+                    class="form-control rounded-pill"
                     id="zipCodeEntry"
                     name="zip"
                     placeholder="90001-1234"
@@ -156,9 +157,9 @@
                   />
                   <div class="valid-tooltip">Good</div>
                   <div class="invalid-tooltip">Please provide a zipcode.</div>
-                </div>
-                <div class="col-md-3 position-relative">
-                  <label class="form-label"><strong>Category</strong></label>
+        </div>
+        <div class="col-md-3 position-relative">
+                  <label class="form-label sml-label">Category</label>
                   <div class="form-check">
                     <input
                       class="form-check-input"
@@ -167,7 +168,7 @@
                       value="finances"
                       id="defaultCheck1"
                     />
-                    <label class="form-check-label" for="defaultCheck1">
+                    <label class="form-check-label mx-2" for="defaultCheck1">
                       Finances
                     </label>
                   </div>
@@ -179,7 +180,7 @@
                       value="food"
                       id="defaultCheck2"
                     />
-                    <label class="form-check-label" for="defaultCheck2">
+                    <label class="form-check-label mx-2" for="defaultCheck2">
                       Food
                     </label>
                   </div>
@@ -191,7 +192,7 @@
                       value="sponsorship"
                       id="defaultCheck3"
                     />
-                    <label class="form-check-label" for="defaultCheck3">
+                    <label class="form-check-label mx-2" for="defaultCheck3">
                       Sponsorship
                     </label>
                   </div>
@@ -203,7 +204,7 @@
                       value="mentorship"
                       id="defaultCheck4"
                     />
-                    <label class="form-check-label" for="defaultCheck4">
+                    <label class="form-check-label mx-2" for="defaultCheck4">
                       Mentorship
                     </label>
                   </div>
@@ -215,17 +216,25 @@
                       value="education"
                       id="defaultCheck5"
                     />
-                    <label class="form-check-label" for="defaultCheck5">
+                    <label class="form-check-label mx-2" for="defaultCheck5">
                       Education
                     </label>
                   </div>
-                </div>
-                <div class="col-md-9 position-relative">
-                  <label class="form-label"><strong>Description</strong></label>
+                  <label for="otherCategory" class="tiny-text mb-0"><b>Other</b></label>
+                  <input 
+                    type="text" 
+                    class="form-control tag-textbox rounded-pill" 
+                    id="otherCategory"
+                    name="category"
+                    placeholder="Therapy"
+                  >
+        </div>
+        <div class="col-md-9 position-relative">
+                  <label class="form-label sml-label">Description</label>
                   <textarea
                     name="description"
-                    class="form-control"
-                    rows="5"
+                    class="form-control rounded-lg"
+                    rows="7"
                     placeholder="City Food Bank is comitted to serving individuals going through food insecurity."
                     required
                   ></textarea>
@@ -233,17 +242,13 @@
                   <div class="invalid-tooltip">
                     Please provide a description.
                   </div>
-                </div>
-                <div class="col-12 position text-center">
-                  <button class="btn btn-dark" type="submit">
-                    Submit form
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="col-12 position text-center mb-5">
+          <button class="btn pink-btn rounded-pill shadow mt-3" type="submit">
+            Submit form
+          </button>
+        </div> 
+      </form>
     </div>
     <script>
       (function formValidation() {
