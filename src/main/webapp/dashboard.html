@@ -6,15 +6,27 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
     <script
@@ -27,7 +39,17 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/b9ea183eab.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7Xskjjq_cfnffdTfXYmyUBkcekfu3xbg&region=US"></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <!-- Customize Scripts -->
     <script src="dashScript.js"></script>
+    <script src="mapScript.js"></script>
     <link rel="stylesheet" href="dashboardStyle.css" />
     <title>Dashboard</title>
   </head>
@@ -83,7 +105,50 @@
       </form>
     </nav>
     <h1 class="mb-3 d-flex justify-content-center">Resource Dashboard</h1>
-    <center><a href="/map.html">Map of All resources</a></center>
+
+    <!-- Modal for Map Visualization -->
+    <p>
+      <button
+        type="button"
+        class="btn grn-btn rounded-pill"
+        data-bs-toggle="modal"
+        data-bs-target="#mapModal"
+        onClick="initMap()"
+      >
+        <i class="fa-solid fa-location-dot"></i>
+        Resource Map Visualization
+      </button>
+    </p>
+    <div
+      class="modal fade"
+      tabindex="-1"
+      id="mapModal"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-lg modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Map Visualization for All Resources
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="mapContainer"></div>
+          <div class="modal-body">
+            Don't see anything in your State? Add it
+            <a href="/ResourceForm.html">here</a>!
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for Map Visualization -->
+
     <div id="resource-list"></div>
   </body>
 </html>
