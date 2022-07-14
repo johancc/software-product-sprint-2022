@@ -20,7 +20,7 @@ async function initMap() {
 
   // Initialize Google map
   const map = new google.maps.Map(document.getElementById("mapContainer"), {
-    center: { lat: 39.885947, lng: -97.702313 },
+    center: { lat: 39.999947, lng: -97.702313 },
     zoom: 4,
     mapId: "a1a8966f509039c3",
   });
@@ -32,15 +32,16 @@ async function initMap() {
     const marker = new google.maps.Marker({
       position: { lat: val[0], lng: val[1] },
       map: map,
-      // label: key
     });
     marker.addListener("click", () => {
-      infoWindow.setContent(label);
-      infoWindow.open(map, marker);
+      const infowindow = new google.maps.InfoWindow({
+        content: key,
+      });
+      infowindow.open(map, marker);
     });
     markers.push(marker);
   });
 
   // Make markers into cluster
-  const cluster = new markerClusterer.MarkerClusterer({ markers, map });
+  new markerClusterer.MarkerClusterer({ markers, map });
 }
