@@ -2,7 +2,7 @@
 async function getData() {
   const resourceMap = new Map();
 
-  await fetch("/get-map-resources")
+  await fetch("/map-resources")
     .then((response) => response.json())
     .then((resources) => {
       resources.forEach((resource) => {
