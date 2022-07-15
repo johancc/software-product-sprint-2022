@@ -101,6 +101,7 @@
         class="btn grn-btn rounded-pill"
         data-bs-toggle="modal"
         data-bs-target="#mapModal"
+        id="mapOpenButton"
         onClick="initMap()"
       >
         <i class="fa-solid fa-location-dot"></i>
@@ -120,14 +121,14 @@
             <h5 class="modal-title" id="exampleModalLabel">
               Map Visualization for All Resources
             </h5>
-            <button type="button" data-bs-dismiss="modal" id="mapModalCloseBtn">
+            <button type="button" data-bs-dismiss="modal" id="mapCloseButton">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
           <div class="modal-body" id="mapContainer"></div>
           <div class="modal-body">
             Don't see anything in your State? Add it
-            <a href="/ResourceForm.html">here</a>!
+            <a href="/ResourceForm.html#goToForm">here</a>!
           </div>
         </div>
       </div>
