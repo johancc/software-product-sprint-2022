@@ -2,7 +2,7 @@
 async function getData() {
   const resourceMap = new Map();
 
-  await fetch("/map-resources")
+  await fetch("/get-map-resources")
     .then((response) => response.json())
     .then((resources) => {
       resources.forEach((resource) => {
@@ -29,8 +29,10 @@ async function initMap() {
   let markers = [];
 
   resourceMap.forEach((val, key) => {
+    let latitude = val[0];
+    let longitude = val[1];
     const marker = new google.maps.Marker({
-      position: { lat: val[0], lng: val[1] },
+      position: { lat: latitude, lng: longitude },
       map: map,
     });
     marker.addListener("click", () => {

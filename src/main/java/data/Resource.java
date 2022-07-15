@@ -40,7 +40,7 @@ public final class Resource {
     this.lon = 0.0;
   }
 
-  // Aggregated Resource Constructore
+  // Aggregated Resource Constructor
   public Resource(String name, Double lat, Double lon) {
     this.name = name;
     this.lat = lat;
