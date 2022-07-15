@@ -23,22 +23,20 @@ function createResourceElement(newResource) {
   } = newResource;
 
   dashCard.innerHTML = `
-      <div class="col-auto mb-3">
-          <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                  <h5> ${resource_name} </h5>
-                  <ul class='list-group list-group-flush'>
-                  <li> ${phone} </li> 
-                  <li> ${email} </li>  
-                  <li> ${zip} </li>
-                  <p> ${description}</p> 
-                  <li> ${category} </li> 
-                  </ul>
-                  <div class="card-body">
-                  <a href="${url}"> ${url} </a>
-                  </div>
-              </div>
-          </div>
-      </div>`;
+  <div class="col-auto mb-3">
+  <div class="card" style="width: 18rem;">
+      <div class="card-body">
+          <h5> ${resource_name} </h5>
+          <p> ${description}</p>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item"> ${phone} </li> 
+              <li class="list-group-item"> ${email} </li>  
+              <li class="list-group-item"> ${zip} </li> 
+              <li class="list-group-item"> ${category} </li> 
+              <a href="${url}" class="list-group-item"> ${url} </a>
+          </ul>
+      </div>
+  </div>
+</div>`;
   return dashCard;
 }
