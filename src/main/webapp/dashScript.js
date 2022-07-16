@@ -1,19 +1,19 @@
 function loadResources() {
-  fetch("/get-all-resources")
-      .then((response) => response.json())
-      .then((resources) => {
-        const resourceListElement = document.getElementById("resource-list");
-        resources.forEach((newResource) => {
-          resourceListElement.appendChild(createResourceElement(newResource));
-        });
+  fetch("/all-resources")
+    .then((response) => response.json())
+    .then((resources) => {
+      const resourceListElement = document.getElementById("resource-list");
+      resources.forEach((newResource) => {
+        resourceListElement.appendChild(createResourceElement(newResource));
       });
+    });
 }
 
 function createResourceElement(newResource) {
   let dashCard = document.createElement("div");
   dashCard.className = "newResource";
   let {
-    name : resource_name,
+    name: resource_name,
     phone,
     email,
     url,
