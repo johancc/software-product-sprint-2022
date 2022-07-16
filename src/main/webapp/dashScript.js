@@ -11,19 +11,8 @@ function loadAllResources() {
 
 function loadZipResources() {
   const searchParam = document.getElementById("zipCodeEntry").value;
-  fetch(
-    "/zip-resources" +
-      new URLSearchParams({
-        zipCode: searchParam,
-      })
-  )
-    .then((response) => {
-      response.status == 200
-        ? response.json()
-        : (document.getElementById("resource-list").innerHTML =
-            "Something went wrong, please try searching again.");
-      return;
-    })
+  fetch("/zip-resources" + "?zipCode=" + searchParam)
+    .then((response) => response.json())
     .then((resources) => {
       const resourceListElement = document.getElementById("resource-list");
       if (resources.length == 0) {
