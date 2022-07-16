@@ -29,14 +29,6 @@
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"
     ></script>
-    <!-- Font Awesome Icons -->
-    <script
-      src="https://kit.fontawesome.com/b9ea183eab.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7Xskjjq_cfnffdTfXYmyUBkcekfu3xbg&region=US"></script>
-    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
     <!-- Customize Scripts -->
     <script src="dashScript.js"></script>
     <script src="mapScript.js"></script>
@@ -44,7 +36,7 @@
     <title>Dashboard</title>
   </head>
 
-  <body class="dashboard" onload="loadAllResources()">
+  <body class="dashboard" onload="loadZipResources()">
     <nav
       class="navbar navbar-expand-lg navbar-custom navbar-dark sticky-top shadow mb-5"
     >
@@ -80,70 +72,7 @@
           </ul>
         </div>
       </div>
-      <form
-        class="searchBar form-inline md-form form-sm mt-0"
-        action="/dashboardSearch"
-        method="POST"
-      >
-        <input
-          class="form-control form-control-sm ml-3 w-90"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </form>
     </nav>
-    <h1 class="mb-3 d-flex justify-content-center">Resource Dashboard</h1>
-    <!-- Modal for Map Visualization -->
-    <center>
-      <button
-        type="button"
-        class="btn grn-btn rounded-pill"
-        data-bs-toggle="modal"
-        data-bs-target="#mapModal"
-        id="mapOpenButton"
-        onClick="initMap()"
-      >
-        <i class="fa-solid fa-location-dot"></i>
-        Resource Map Visualization
-      </button>
-    </center>
-    <div
-      class="modal fade"
-      tabindex="-1"
-      id="mapModal"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-lg modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              Map Visualization for All Resources
-            </h5>
-            <button type="button" data-bs-dismiss="modal" id="mapCloseButton">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <div class="modal-body" id="mapContainer"></div>
-          <div class="modal-body">
-            Don't see anything in your State? Add it
-            <a href="/ResourceForm.html#goToForm">here</a>!
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal for Map Visualization -->
-    <br />
-    <div class="col d-flex justify-content-center">
-      <div>
-        <button type="button" class="btn btn-primary">Finances</button>
-        <button type="button" class="btn btn-primary">Food</button>
-        <button type="button" class="btn btn-primary">Sponsorship</button>
-        <button type="button" class="btn btn-primary">Mentorship</button>
-        <button type="button" class="btn btn-primary">Education</button>
-      </div>
-    </div>
     <br />
     <div class="col-1"></div>
     <div class="container-fluid mt-4">
