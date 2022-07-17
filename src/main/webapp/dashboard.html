@@ -80,18 +80,6 @@
           </ul>
         </div>
       </div>
-      <form
-        class="searchBar form-inline md-form form-sm mt-0"
-        action="/dashboardSearch"
-        method="POST"
-      >
-        <input
-          class="form-control form-control-sm ml-3 w-90"
-          type="text"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </form>
     </nav>
     <h1 class="mb-3 d-flex justify-content-center">Resource Dashboard</h1>
     <!-- Modal for Map Visualization -->
@@ -145,6 +133,16 @@
       </div>
     </div>
     <br />
+    <div class="searchCard">
+      <input
+        id="searchbar"
+        clas="searchBox"
+        type="text"
+        placeholder="Search The Gallery"
+        onkeyup="search_card()"
+        aria-label="Search"
+      />
+    </div>
     <div class="col-1"></div>
     <div class="container-fluid mt-4">
       <div class="row justify-content-center" id="resource-list"></div>
