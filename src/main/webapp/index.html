@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dashboardStyle.css" />
     <script src="script.js"></script>
     <script src="dashScript.js"></script>
     <script
@@ -98,7 +99,7 @@
                 type="submit"
                 class="btn grn-btn rounded-pill shadow"
                 data-bs-toggle="modal"
-                data-bs-target="#mapModal"
+                data-bs-target="#resourceModal"
                 id="mapOpenButton"
                 onClick="loadZipResources()"
               >
@@ -111,7 +112,7 @@
       <div
         class="modal fade"
         tabindex="-1"
-        id="mapModal"
+        id="resourceModal"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
@@ -125,7 +126,17 @@
                 <i class="fa-solid fa-xmark"></i>
               </button>
             </div>
-            <div class="modal-body" id="resource-list"></div>
+            <div class="modal-body" id="resourceContainer">
+              <div id="resource-message"></div>
+              <div class="container-fluid mt-4">
+                <center>
+                  <div
+                    class="row row-cols-1 row-cols-md-3 g-4"
+                    id="resource-list"
+                  ></div>
+                </center>
+              </div>
+            </div>
           </div>
         </div>
       </div>

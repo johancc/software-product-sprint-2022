@@ -94,3 +94,8 @@
   width: 135px;
   font-size: 15px;
 }
+
+#resourceContainer {
+  max-height: 90vh;
+  overflow: scroll;
+}
