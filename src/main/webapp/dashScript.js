@@ -38,5 +38,20 @@ function createResourceElement(newResource) {
       </div>
   </div>
 </div>`;
+  for (i = 0; i < category.length; i++) {
+    dashCard.classList.add(category[i]);
+  }
   return dashCard;
+}
+
+function toggleFilter(tagString) {
+  var dashCards = document.getElementsByClassName(tagString);
+  for (i = 0; i < dashCards.length; i++) {
+    var card = dashCards[i];
+    if (card.style.display === "none") {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  }
 }
