@@ -1,96 +1,128 @@
 .background {
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 300px;
-    background-color: #d9eee1;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 300px;
+  background-color: #d9eee1;
 }
 
 .background-yellow {
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 300px;
-    background-color: #E7E8BA;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 300px;
+  background-color: #E7E8BA;
 }
 
 .background-tan {
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 300px;
-    background-color: #F2EBD9;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 300px;
+  background-color: #f2ebd9;
+  color: #282a35;
+}
+
+.background-drk {
+  background-color: #282a35;
 }
 
 .content {
-    width: 750px;
+  width: 750px;
 }
 
 .container-padding {
-    padding-top: 10px;
-    padding-bottom: 100px;
+  padding-top: 10px;
+  padding-bottom: 100px;
 }
 
 .navbar-custom {
-    background-color: #282a35;
-    color: white;
+  background-color: #282a35;
+  color: white;
 }
 
 .big-text {
-    font-size: 70px;
-    color: #282a35;
+  font-size: 70px;
+  color: #282a35;
+}
+
+.wht-text {
+  font-size: 70px;
+  color: white;
 }
 
 .med-text {
-    font-size: 50px;
+  font-size: 50px;
+}
+
+.sml-text {
+  font-size: 20px;
 }
 
 .tiny-text {
-    font-size: 13px;
+  font-size: 13px;
 }
 
 .pink-label {
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 28px;
-    padding-right: 28px;
-    font-size: 25px;
-    border-radius: 60px;
-    background-color: #c097a5;
-    color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 28px;
+  padding-right: 28px;
+  font-size: 25px;
+  border-radius: 60px;
+  background-color: #c097a5;
+  color: white;
+}
+
+.lrg-label {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 70px;
+  background-color: #282a35;
+  border-radius: 60px;
+  color: white;
 }
 
 .med-label {
-    padding-top: 9px;
-    padding-bottom: 9px;
-    padding-left: 18px;
-    padding-right: 18px;
-    font-size: 25px;
-    border-radius: 60px;
-    background-color: #0F212E;
-    color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 18px;
+  padding-right: 18px;
+  font-size: 25px;
+  border-radius: 60px;
+  background-color: #0F212E;
+  color: white;
 }
 
 .sml-label {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 28px;
-    padding-right: 28px;
-    font-size: 15px;
-    border-radius: 60px;
-    background-color: #0F212E;
-    color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 28px;
+  padding-right: 28px;
+  font-size: 15px;
+  border-radius: 60px;
+  background-color: #0F212E;
+  color: white;
 }
 
 .grn-btn {
-    background-color: #132E0F;
-    color: white;
+  background-color: #132E0F;
+  color: white;
 }
 
 .pink-btn {
-    background-color: #c097a5;
-    color: white;
+  background-color: #c097a5;
+  color: white;
 }
 
 .tag-textbox {
-    height: 22px;
-    width: 135px;
-    font-size: 15px;
+  height: 22px;
+  width: 135px;
+  font-size: 15px;
+}
+
+#resourceContainer {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
+.team-card {
+  border-radius: 20px;
 }
