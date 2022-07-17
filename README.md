@@ -1,6 +1,6 @@
 <h1 align="center">
   Google SPS Team 20 - Our Help
-  <br/>
+  <br/><br/>
   <img src="src/main/webapp/assets/banner.png" alt="Our Help banner">
 </h1>
 
