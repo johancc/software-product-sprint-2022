@@ -15,7 +15,7 @@ This web application is built within Google Cloud Platform, hosted on App Engine
 ## Team
 
 <ul>
-<li><a href="https://github.com/johancc"><b>Johan Cervante</b></a> - Project Advisor</li>
+<li><a href="https://github.com/johancc"><b>Johan Cervantes</b></a> - Project Advisor</li>
 <li><a href="https://github.com/ahollenbaugh"><b>Allie Hollenbaugh</b></a> - Developer (Back-end)</li>
 <li><a href="https://github.com/mike39608"><b>Michael Peters</b></a> - Developer (Front-end)</li>
 <li><a href="https://github.com/pabdue"><b>Pablo Duenas</b></a> - Developer (Front-end)</li>
