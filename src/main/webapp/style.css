@@ -17,6 +17,11 @@
   margin-right: auto;
   padding-bottom: 300px;
   background-color: #f2ebd9;
+  color: #282a35;
+}
+
+.background-drk {
+  background-color: #282a35;
 }
 
 .content {
@@ -38,8 +43,17 @@
   color: #282a35;
 }
 
+.wht-text {
+  font-size: 70px;
+  color: white;
+}
+
 .med-text {
   font-size: 50px;
+}
+
+.sml-text {
+  font-size: 20px;
 }
 
 .tiny-text {
@@ -57,6 +71,15 @@
   color: white;
 }
 
+.lrg-label {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 70px;
+  background-color: #282a35;
+  border-radius: 60px;
+  color: white;
+}
+
 .med-label {
   padding-top: 9px;
   padding-bottom: 9px;
@@ -64,7 +87,7 @@
   padding-right: 18px;
   font-size: 25px;
   border-radius: 60px;
-  background-color: #0f212e;
+  background-color: #0F212E;
   color: white;
 }
 
@@ -75,12 +98,12 @@
   padding-right: 28px;
   font-size: 15px;
   border-radius: 60px;
-  background-color: #0f212e;
+  background-color: #0F212E;
   color: white;
 }
 
 .grn-btn {
-  background-color: #132e0f;
+  background-color: #132E0F;
   color: white;
 }
 
@@ -93,4 +116,13 @@
   height: 22px;
   width: 135px;
   font-size: 15px;
+}
+
+#resourceContainer {
+  max-height: 90vh;
+  overflow: scroll;
+}
+
+.team-card {
+  border-radius: 20px;
 }
