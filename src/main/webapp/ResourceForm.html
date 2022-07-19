@@ -250,37 +250,12 @@
             </div>
           </div>
           <div class="col-12 position text-center mb-5">
-            <button class="btn pink-btn rounded-pill shadow mt-3" type="submit">
+            <button class="btn pink-btn rounded-pill shadow mt-3" type="submit" onclick="formValidation()">
                 Submit form
             </button>
           </div> 
         </form>
       </div>
-    </div>    
-    <script>
-      (function formValidation() {
-        "use strict";
-
-        // Fetch the Resource Form
-        var forms = document.querySelectorAll(".needs-validation");
-
-        // Loop over inputs and prevent invalid submission
-        Array.prototype.slice.call(forms).forEach(function (form) {
-          form.addEventListener(
-            "submit",
-            function (event) {
-              event.preventDefault();
-              if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-
-              form.classList.add("was-validated");
-            },
-            false
-          );
-        });
-      })();
-    </script>
+    </div>
   </body>
 </html>
