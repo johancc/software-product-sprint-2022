@@ -46,3 +46,39 @@
   padding-top: 10px;
   padding-bottom: 100px;
 }
+
+.card {
+  border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.569);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  border-radius: 1em;
+  background-color: white;
+  color: black;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #a7bdaf;
+}
+
+#mapContainer {
+  height: 50vh;
+}
+
+#mapCloseButton {
+  border: none;
+  outline: none;
+  background-color: white;
+}
+
+#mapOpenButton:hover {
+  color: #132e0f;
+  background-color: #d9eee1;
+  border: 1px solid #132e0f;
+}
