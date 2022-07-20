@@ -48,7 +48,7 @@ function createResourceElement(newResource) {
   } = newResource;
 
   dashCard.innerHTML = `
-  <div class="col">
+  <div class="col-auto mb-3">
   <div class="card" style="width: 18rem;">
       <div class="card-body">
           <h5> ${resource_name} </h5>
