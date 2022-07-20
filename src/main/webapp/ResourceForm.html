@@ -17,6 +17,11 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body class="background-yellow">
@@ -65,7 +70,10 @@
         </div>
       </div>
       <div class="row mx-auto">
-        <img class="col-md-6 rounded-pill shadow-lg mt-3 mb-5 mx-auto" src="assets/ContributePageGraphic.png">
+        <img
+          class="col-md-6 rounded-pill shadow-lg mt-3 mb-5 mx-auto"
+          src="assets/ContributePageGraphic.png"
+        />
       </div>
       <div class="row mx-5">
         <div class="col-md-12 mx-auto">
@@ -89,8 +97,7 @@
         <form
           id="ResourceForm"
           class="row g-3 needs-validation"
-          method="POST"
-          action="/new-resource"
+          onsubmit="handleSubmit()"
           novalidate
         >
           <div class="col-md-12 position-relative mt-5 mb-3">
@@ -257,11 +264,57 @@
             <div class="invalid-tooltip">Please provide a description.</div>
           </div>
           <div class="col-12 position text-center mb-5">
-            <button class="btn pink-btn rounded-pill shadow mt-3" type="submit" onclick="formValidation()">
-                Submit form
+            <button
+              class="btn pink-btn rounded-pill shadow mt-3"
+              type="submit"
+              onclick="formValidation()"
+            >
+              Submit form
             </button>
           </div>
         </form>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="toast-success"
+        class="toast hide text-white bg-success"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header text-success">
+          <strong class="me-auto">Success</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">
+          Successfully added new resource. Thank you!
+        </div>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="toast-failure"
+        class="toast hide text-white bg-danger"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header text-danger">
+          <strong class="me-auto">Error</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Something went wrong, please try again.</div>
       </div>
     </div>
   </body>

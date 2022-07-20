@@ -18,7 +18,7 @@ function validateURL(link) {
     url = "http://" + url;
   }
   link.value = url;
-  return link
+  return link;
 }
 
 function formValidation() {
@@ -41,5 +41,37 @@ function formValidation() {
       },
       false
     );
+  });
+}
+
+function handleSubmit() {
+  // Handle category data checkboxes
+  var categoryData = [
+    ...document.querySelectorAll(".form-check-input:checked"),
+  ].map((e) => e.value);
+  if (document.getElementById("otherCategory").value) {
+    categoryData.push(document.getElementById("otherCategory").value);
+  }
+
+  // Handle form data
+  const formData = {
+    name: document.getElementById("nameEntry").value,
+    phone: document.getElementById("phoneEntry").value,
+    email: document.getElementById("emailEntry").value,
+    url: document.getElementById("urlEntry").value,
+    zip: document.getElementById("zipCodeEntry").value,
+    description: document.getElementsByName("category").value,
+    category: categoryData,
+  };
+
+  const queryURL = "/new-resource?" + $.param(formData);
+
+  // Make POST request to create new resource
+  fetch(queryURL, {
+    method: "POST",
+  }).then((response) => {
+    response.ok
+      ? $("#toast-success").toast("show")
+      : $("#toast-failure").toast("show");
   });
 }
