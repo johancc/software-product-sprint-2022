@@ -17,6 +17,11 @@
   margin-right: auto;
   padding-bottom: 300px;
   background-color: #f2ebd9;
+  color: #282a35;
+}
+
+.background-drk {
+  background-color: #282a35;
 }
 
 .content {
@@ -38,8 +43,17 @@
   color: #282a35;
 }
 
+.wht-text {
+  font-size: 70px;
+  color: white;
+}
+
 .med-text {
   font-size: 50px;
+}
+
+.sml-text {
+  font-size: 20px;
 }
 
 .tiny-text {
@@ -54,6 +68,15 @@
   font-size: 25px;
   border-radius: 60px;
   background-color: #c097a5;
+  color: white;
+}
+
+.lrg-label {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 70px;
+  background-color: #282a35;
+  border-radius: 60px;
   color: white;
 }
 
@@ -98,4 +121,8 @@
 #resourceContainer {
   max-height: 90vh;
   overflow: scroll;
+}
+
+.team-card {
+  border-radius: 20px;
 }

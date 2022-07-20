@@ -56,7 +56,7 @@
               <a class="nav-link active" href="ResourceForm.html">Contribute</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link active" href="#">About</a>
+              <a class="nav-link active" href="about.html">About</a>
             </li>
           </ul>
         </div>
@@ -78,7 +78,7 @@
       </div>
       <div class="row mt-3 mx-auto">
         <h3 class="text-center mt-5 mb-4">
-          <b class="med-label">Begin by entering your Zip code.</b>
+          <b class="med-label">Begin by entering your ZIP Code.</b>
         </h3>
         <div class="mb-5 mx-auto">
           <form id="zipCodeForm" class="row g-3 needs-validation" novalidate>
@@ -141,30 +141,5 @@
         </div>
       </div>
     </div>
-    <script>
-      (function formValidation() {
-        "use strict";
-
-        // Fetch the Resource Form
-        var forms = document.querySelectorAll(".needs-validation");
-
-        // Loop over inputs and prevent invalid submission
-        Array.prototype.slice.call(forms).forEach(function (form) {
-          form.addEventListener(
-            "submit",
-            function (event) {
-              event.preventDefault();
-              if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-
-              form.classList.add("was-validated");
-            },
-            false
-          );
-        });
-      })();
-    </script>
   </body>
 </html>

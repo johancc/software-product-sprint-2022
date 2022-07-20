@@ -20,3 +20,26 @@ function validateURL(link) {
   link.value = url;
   return link
 }
+
+function formValidation() {
+  "use strict";
+
+  // Fetch the Resource Form
+  var forms = document.querySelectorAll(".needs-validation");
+
+  // Loop over inputs and prevent invalid submission
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+}

@@ -50,7 +50,7 @@
               <a class="nav-link active" href="ResourceForm.html">Contribute</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link active" href="#">About</a>
+              <a class="nav-link active" href="about.html">About</a>
             </li>
           </ul>
         </div>
@@ -65,10 +65,7 @@
         </div>
       </div>
       <div class="row mx-auto">
-        <img
-          class="col-md-6 rounded-pill shadow-lg mt-3 mb-5 mx-auto"
-          src="assets/ContributePageGraphic.png"
-        />
+        <img class="col-md-6 rounded-pill shadow-lg mt-3 mb-5 mx-auto" src="assets/ContributePageGraphic.png">
       </div>
       <div class="row mx-5">
         <div class="col-md-12 mx-auto">
@@ -260,36 +257,12 @@
             <div class="invalid-tooltip">Please provide a description.</div>
           </div>
           <div class="col-12 position text-center mb-5">
-            <button class="btn pink-btn rounded-pill shadow mt-3" type="submit">
-              Submit form
+            <button class="btn pink-btn rounded-pill shadow mt-3" type="submit" onclick="formValidation()">
+                Submit form
             </button>
           </div>
         </form>
       </div>
     </div>
-    <script>
-      (function formValidation() {
-        "use strict";
-
-        // Fetch the Resource Form
-        var forms = document.querySelectorAll(".needs-validation");
-
-        // Loop over inputs and prevent invalid submission
-        Array.prototype.slice.call(forms).forEach(function (form) {
-          form.addEventListener(
-            "submit",
-            function (event) {
-              if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-
-              form.classList.add("was-validated");
-            },
-            false
-          );
-        });
-      })();
-    </script>
   </body>
 </html>

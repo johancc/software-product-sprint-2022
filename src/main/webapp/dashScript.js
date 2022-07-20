@@ -10,6 +10,7 @@ function loadAllResources() {
 }
 
 function loadZipResources() {
+  formValidation();
   const searchParam = document.getElementById("zipCodeEntry").value;
   if (!searchParam) return;
   const resourceListElement = document.getElementById("resource-list");
