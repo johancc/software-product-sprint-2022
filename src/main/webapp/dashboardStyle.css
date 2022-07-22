@@ -3,14 +3,9 @@
 }
 
 .dashboard {
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 300px;
+  height: 100%;
   background-color: #d9eee1;
-}
-
-.content {
-  width: 750px;
+  margin-left: auto;
 }
 
 .navbar-custom {
@@ -33,7 +28,7 @@
   padding-right: 18px;
   font-size: 25px;
   border-radius: 60px;
-  background-color: #0f212e;
+  background-color: #282a35;
   color: white;
 }
 
@@ -82,3 +77,15 @@
   background-color: #d9eee1;
   border: 1px solid #132e0f;
 }
+
+.side-bar {
+  background-color: #cce0d4;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 48px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 #c6d8cc;
+}
+
