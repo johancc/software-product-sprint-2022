@@ -2,6 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
     <title>Contribute</title>
     <link rel="icon" href="assets/logo.png" />
     <link
@@ -255,6 +259,7 @@
             <label class="form-label sml-label">Description</label>
             <textarea
               name="description"
+              id="descriptionEntry"
               class="form-control rounded-lg"
               rows="7"
               placeholder="City Food Bank is comitted to serving individuals going through food insecurity."

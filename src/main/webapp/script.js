@@ -60,11 +60,11 @@ function handleSubmit() {
     email: document.getElementById("emailEntry").value,
     url: document.getElementById("urlEntry").value,
     zip: document.getElementById("zipCodeEntry").value,
-    description: document.getElementsByName("category").value,
+    description: document.getElementById("descriptionEntry").value,
     category: categoryData,
   };
 
-  const queryURL = "/new-resource?" + $.param(formData);
+  const queryURL = "/new-resource?" + new URLSearchParams(formData);
 
   // Make POST request to create new resource
   fetch(queryURL, {
