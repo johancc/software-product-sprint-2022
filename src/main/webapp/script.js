@@ -13,7 +13,7 @@
 // limitations under the License.
 
 function validateURL(link) {
-  var url = link.value;
+  let url = link.value;
   if (!~url.indexOf("http")) {
     url = "http://" + url;
   }
@@ -25,7 +25,7 @@ function formValidation() {
   "use strict";
 
   // Fetch the Resource Form
-  var forms = document.querySelectorAll(".needs-validation");
+  let forms = document.querySelectorAll(".needs-validation");
 
   // Loop over inputs and prevent invalid submission
   Array.prototype.slice.call(forms).forEach(function (form) {
@@ -46,7 +46,7 @@ function formValidation() {
 
 async function handleSubmit() {
   // Handle category data checkboxes
-  var categoryData = [
+  let categoryData = [
     ...document.querySelectorAll(".form-check-input:checked"),
   ].map((e) => e.value);
   if (document.getElementById("otherCategory").value) {
