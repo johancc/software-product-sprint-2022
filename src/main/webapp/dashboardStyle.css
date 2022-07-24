@@ -1,7 +1,3 @@
-.searchBar {
-  justify-content: end;
-}
-
 .dashboard {
   height: 100%;
   background-color: #d9eee1;
@@ -89,3 +85,8 @@
   box-shadow: inset -1px 0 0 #c6d8cc;
 }
 
+.searchCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -75,11 +75,10 @@
               <a class="nav-link active" href="ResourceForm.html">Contribute</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link active" href="#">About</a>
+              <a class="nav-link active" href="about.html">About</a>
             </li>
           </ul>
       </div>
-
     </div>
     </nav>
     <div class="row">
@@ -90,19 +89,15 @@
               Search Resources
             </h5>
             <div class="card-body">
-              <div id="searchBar">
-                <form
-                  class="searchBar"
-                  action="/dashboardSearch"
-                  method="POST"
-                >
-                  <input
-                    class="form-control rounded-pill"
-                    type="text"
-                    placeholder="Search"
-                    aria-label="Search"
-                  />
-                </form>
+              <div class="searchCard">
+                <input
+                  id="searchbar"
+                  class="form-control searchBox rounded-pill"
+                  type="text"
+                  placeholder="Search The Gallery"
+                  aria-label="Search"
+                  onkeyup="search_card()"
+                />
               </div>
             </div>
           </div>
@@ -240,7 +235,8 @@
         <div class="mt-5">
           <h1 class="med-text d-flex justify-content-center"><b>Resource Dashboard</b></h1>
         </div>
-        <hr>        
+        <hr>
+        <div class="col-1"></div>
         <div class="container-fluid mt-4">
           <div class="row justify-content-center" id="resource-list"></div>
         </div>

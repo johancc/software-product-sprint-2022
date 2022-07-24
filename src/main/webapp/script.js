@@ -13,19 +13,19 @@
 // limitations under the License.
 
 function validateURL(link) {
-  var url = link.value;
+  let url = link.value;
   if (!~url.indexOf("http")) {
     url = "http://" + url;
   }
   link.value = url;
-  return link
+  return link;
 }
 
 function formValidation() {
   "use strict";
 
   // Fetch the Resource Form
-  var forms = document.querySelectorAll(".needs-validation");
+  let forms = document.querySelectorAll(".needs-validation");
 
   // Loop over inputs and prevent invalid submission
   Array.prototype.slice.call(forms).forEach(function (form) {
@@ -41,5 +41,44 @@ function formValidation() {
       },
       false
     );
+  });
+}
+
+async function handleSubmit() {
+  // Handle category data checkboxes
+  let categoryData = [
+    ...document.querySelectorAll(".form-check-input:checked"),
+  ].map((e) => e.value);
+  if (document.getElementById("otherCategory").value) {
+    categoryData.push(document.getElementById("otherCategory").value);
+  }
+
+  // Handle form data
+  const formData = {
+    name: document.getElementById("nameEntry").value,
+    phone: document.getElementById("phoneEntry").value,
+    email: document.getElementById("emailEntry").value,
+    url: document.getElementById("urlEntry").value,
+    zip: document.getElementById("zipCodeEntry").value,
+    description: document.getElementById("descriptionEntry").value,
+    category: categoryData,
+  };
+
+  const queryURL = "/new-resource?" + new URLSearchParams(formData);
+
+  // Make POST request to create new resource
+  $("#toast-loading").toast("show");
+
+  fetch(queryURL, {
+    method: "POST",
+  }).then((response) => {
+    if (response.ok) {
+      $("#toast-success").toast("show");
+      setTimeout(() => {
+        window.location.href = "/dashboard.html";
+      }, 5000);
+    } else {
+      $("#toast-failure").toast("show");
+    }
   });
 }
