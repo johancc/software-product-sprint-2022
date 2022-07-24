@@ -9,6 +9,10 @@
   color: white;
 }
 
+#resource-list {
+  min-height: 100vh;
+}
+
 .big-text {
   font-size: 70px;
 }
