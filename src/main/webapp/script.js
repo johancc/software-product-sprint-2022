@@ -44,7 +44,7 @@ function formValidation() {
   });
 }
 
-function handleSubmit() {
+async function handleSubmit() {
   // Handle category data checkboxes
   var categoryData = [
     ...document.querySelectorAll(".form-check-input:checked"),
@@ -67,11 +67,18 @@ function handleSubmit() {
   const queryURL = "/new-resource?" + new URLSearchParams(formData);
 
   // Make POST request to create new resource
+  $("#toast-loading").toast("show");
+
   fetch(queryURL, {
     method: "POST",
   }).then((response) => {
-    response.ok
-      ? $("#toast-success").toast("show")
-      : $("#toast-failure").toast("show");
+    if (response.ok) {
+      $("#toast-success").toast("show");
+      setTimeout(() => {
+        window.location.href = "/dashboard.html";
+      }, 5000);
+    } else {
+      $("#toast-failure").toast("show");
+    }
   });
 }

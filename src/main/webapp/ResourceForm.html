@@ -189,7 +189,7 @@
                 class="form-check-input"
                 type="checkbox"
                 name="category"
-                value="finances"
+                value="Finances"
                 id="defaultCheck1"
               />
               <label class="form-check-label mx-2" for="defaultCheck1">
@@ -201,7 +201,7 @@
                 class="form-check-input"
                 type="checkbox"
                 name="category"
-                value="food"
+                value="Food"
                 id="defaultCheck2"
               />
               <label class="form-check-label mx-2" for="defaultCheck2">
@@ -213,7 +213,7 @@
                 class="form-check-input"
                 type="checkbox"
                 name="category"
-                value="sponsorship"
+                value="Sponsorship"
                 id="defaultCheck3"
               />
               <label class="form-check-label mx-2" for="defaultCheck3">
@@ -225,7 +225,7 @@
                 class="form-check-input"
                 type="checkbox"
                 name="category"
-                value="mentorship"
+                value="Mentorship"
                 id="defaultCheck4"
               />
               <label class="form-check-label mx-2" for="defaultCheck4">
@@ -237,7 +237,7 @@
                 class="form-check-input"
                 type="checkbox"
                 name="category"
-                value="education"
+                value="Education"
                 id="defaultCheck5"
               />
               <label class="form-check-label mx-2" for="defaultCheck5">
@@ -299,6 +299,8 @@
         </div>
         <div class="toast-body">
           Successfully added new resource. Thank you!
+          <br />
+          Redirecting ...
         </div>
       </div>
     </div>
@@ -320,6 +322,26 @@
           ></button>
         </div>
         <div class="toast-body">Something went wrong, please try again.</div>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+      <div
+        id="toast-loading"
+        class="toast hide bg-light"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header text-primary">
+          <strong class="me-auto">Loading</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body">Adding your resource...</div>
       </div>
     </div>
   </body>
