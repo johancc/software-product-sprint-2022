@@ -68,22 +68,17 @@ function createResourceElement(newResource) {
   </div>
 </div>`;
 
-  //resourceArray.push(newResource);
-  //let resourceObject = {htmlElement:dashCard, JSObject:newResource};
-
   // The categories are being stored as one string in a one-element string array.
   // Split category string and store each category string into a new array:
   let categoryString = newResource.category;
   let categoryArray = categoryString[0].split(",");
   newResource.category = categoryArray;
-  //console.log(categoryArray);
 
   // Convert categories to all lowercase for more effective filtering:
-
   for (i = 0; i < newResource.category.length; i++) {
     newResource.category[i] = newResource.category[i].toLowerCase();
   }
-  console.log(newResource.category);
+
   resourceObjectArray.push(newResource);
   resourceHTMLArray.push(dashCard);
   return dashCard;
@@ -108,7 +103,7 @@ function addToFilteredTags(tagString) {
   console.log(filteredTags);
 }
 
-function toggleFilter() {
+function filterCategories() {
   // Temporarily disable checkboxes after user hits "Apply":
   document.getElementById("defaultCheck1").disabled = true;
   document.getElementById("defaultCheck2").disabled = true;
@@ -119,21 +114,16 @@ function toggleFilter() {
   // For each resource:
   for (i = 0; i < resourceObjectArray.length; i++) {
     let match = false;
-    let currentResource = resourceObjectArray[i]; // resourceObject = {htmlElement, JSObject}
+    let currentResource = resourceObjectArray[i];
     // For each filtered tag:
     for (j = 0; j < filteredTags.length; j++) {
       // Check if any of the categories for this resource are selected or filtered out:
       if (currentResource.category.includes(filteredTags[j])) {
         match = true;
       }
-      //console.log(currentResource.category);
     }
     if (!match) {
       resourceHTMLArray[i].style.display = "none";
-    }
-    //resourceHTMLArray[i].style.display = "none";
-    if (resourceHTMLArray[i].style.display == "none") {
-      console.log(currentResource.name + " has been hidden!");
     }
   }
 }
