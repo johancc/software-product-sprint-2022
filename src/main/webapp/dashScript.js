@@ -1,3 +1,7 @@
+var resourceObjectArray = []; // All resources will live here so they can be accessed outside any functions
+var resourceHTMLArray = []; // Corresponding HTML elements for objects will live here
+var filteredTags = []; // Contains strings corresponding to the checkboxes that have been selected
+
 function loadAllResources() {
   fetch("/all-resources")
     .then((response) => response.json())
@@ -63,6 +67,20 @@ function createResourceElement(newResource) {
       </div>
   </div>
 </div>`;
+
+  // The categories are being stored as one string in a one-element string array.
+  // Split category string and store each category string into a new array:
+  let categoryString = newResource.category;
+  let categoryArray = categoryString[0].split(",");
+  newResource.category = categoryArray;
+
+  // Convert categories to all lowercase for more effective filtering:
+  for (i = 0; i < newResource.category.length; i++) {
+    newResource.category[i] = newResource.category[i].toLowerCase();
+  }
+
+  resourceObjectArray.push(newResource);
+  resourceHTMLArray.push(dashCard);
   return dashCard;
 }
 
@@ -76,6 +94,36 @@ function search_card() {
       x[i].style.display = "none";
     } else {
       x[i].style.display = "inline";
+    }
+  }
+}
+
+function addToFilteredTags(tagString) {
+  filteredTags.push(tagString);
+  console.log(filteredTags);
+}
+
+function filterCategories() {
+  // Temporarily disable checkboxes after user hits "Apply":
+  document.getElementById("defaultCheck1").disabled = true;
+  document.getElementById("defaultCheck2").disabled = true;
+  document.getElementById("defaultCheck3").disabled = true;
+  document.getElementById("defaultCheck4").disabled = true;
+  document.getElementById("defaultCheck5").disabled = true;
+
+  // For each resource:
+  for (i = 0; i < resourceObjectArray.length; i++) {
+    let match = false;
+    let currentResource = resourceObjectArray[i];
+    // For each filtered tag:
+    for (j = 0; j < filteredTags.length; j++) {
+      // Check if any of the categories for this resource are selected or filtered out:
+      if (currentResource.category.includes(filteredTags[j])) {
+        match = true;
+      }
+    }
+    if (!match) {
+      resourceHTMLArray[i].style.display = "none";
     }
   }
 }
