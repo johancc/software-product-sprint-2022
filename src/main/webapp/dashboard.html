@@ -151,6 +151,7 @@
                     name="category"
                     value="finances"
                     id="defaultCheck1"
+                    onclick="addToFilteredTags(value);"
                   />
                   <label class="form-check-label mx-2" for="defaultCheck1">
                     Finances
@@ -163,6 +164,7 @@
                     name="category"
                     value="food"
                     id="defaultCheck2"
+                    onclick="addToFilteredTags(value);"
                   />
                   <label class="form-check-label mx-2" for="defaultCheck2">
                     Food
@@ -175,6 +177,7 @@
                     name="category"
                     value="sponsorship"
                     id="defaultCheck3"
+                    onclick="addToFilteredTags(value);"
                   />
                   <label class="form-check-label mx-2" for="defaultCheck3">
                     Sponsorship
@@ -187,6 +190,7 @@
                     name="category"
                     value="mentorship"
                     id="defaultCheck4"
+                    onclick="addToFilteredTags(value);"
                   />
                   <label class="form-check-label mx-2" for="defaultCheck4">
                     Mentorship
@@ -199,6 +203,7 @@
                     name="category"
                     value="education"
                     id="defaultCheck5"
+                    onclick="addToFilteredTags(value);"
                   />
                   <label class="form-check-label mx-2" for="defaultCheck5">
                     Education
@@ -207,9 +212,16 @@
                 <div class="text-center mt-2">
                   <button
                     class="btn btn-sm grn-btn rounded-pill shadow"
-                    type="submit"
+                    type="button"
+                    onclick="toggleFilter();"
                   >
                     Apply
+                  </button>
+                  <button
+                    class="btn btn-sm grn-btn rounded-pill shadow"
+                    type="submit"
+                  >
+                    Clear
                   </button>
                 </div>
               </form>

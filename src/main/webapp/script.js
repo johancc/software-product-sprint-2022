@@ -49,6 +49,7 @@ async function handleSubmit() {
   let categoryData = [
     ...document.querySelectorAll(".form-check-input:checked"),
   ].map((e) => e.value);
+  console.log("type: " + typeof categoryData + " value: " + categoryData);
   if (document.getElementById("otherCategory").value) {
     categoryData.push(document.getElementById("otherCategory").value);
   }
